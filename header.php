@@ -60,14 +60,9 @@
 
 <body <?php body_class(); ?>>
 
-<?php 
-if ( is_front_page() ) { ?>
-    <div id="bg-slider">
-    </div><!-- #bg-slider -->
-<?php } else { ?>
-<?php
-}
-?>
+	<?php if ( is_front_page() ) { ?>
+	    <div id="bg-slider"></div><!-- #bg-slider -->
+	<?php } ?>
 
     <div id="page" class="hfeed site">
 
