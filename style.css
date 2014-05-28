@@ -18,7 +18,6 @@ along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normali
 and Blueprint http://www.blueprintcss.org/
 */
 
-
 /* =Reset
 -------------------------------------------------------------- */
 
@@ -48,6 +47,9 @@ html {
 }
 body {
 	background: url(images/bg.jpg) fixed #222220;
+}
+body.category-5-zonas {
+	background: #7C0505;
 }
 article,
 aside,
