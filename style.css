@@ -48,7 +48,7 @@ html {
 body {
 	background: url(images/bg.jpg) fixed #222220;
 }
-body.category-5-zonas, body.page-id-310 {
+body.category-5-zonas, body.page-id-310, body.cat-5-zonas {
 	background: url(images/bg-5zonas.jpg) fixed #7C0505;
 }
 
