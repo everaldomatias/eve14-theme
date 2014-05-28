@@ -49,7 +49,7 @@ body {
 	background: url(images/bg.jpg) fixed #222220;
 }
 body.category-5-zonas {
-	background: #7C0505;
+	background: url(images/bg-5zonas.jpg) fixed #7C0505;
 }
 article,
 aside,
@@ -457,7 +457,7 @@ a:active {
 }
 
 hgroup {
-	float: left;
+	float: left;s
 }
 
 #tag {
