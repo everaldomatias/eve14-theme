@@ -75,7 +75,7 @@
                 </a>
             </div><!-- #tag -->
 
-			<?php if ( is_category( '5-zonas' ) ) : ?>
+			<?php if ( is_category( '5-zonas' ) || is_page( 310 ) ) : ?>
 				<img class="logo-5zonas" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-5zonas.png" alt="5 Zonas">	
 			<?php endif; ?>
 

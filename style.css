@@ -48,9 +48,10 @@ html {
 body {
 	background: url(images/bg.jpg) fixed #222220;
 }
-body.category-5-zonas {
+body.category-5-zonas, body.page-id-310 {
 	background: url(images/bg-5zonas.jpg) fixed #7C0505;
 }
+
 article,
 aside,
 details,
