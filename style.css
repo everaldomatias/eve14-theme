@@ -456,6 +456,10 @@ a:active {
 	margin: 0 auto;
 }
 
+hgroup {
+	float: left;
+}
+
 #tag {
 	width: 136px;
 	height: 114px;
@@ -463,6 +467,9 @@ a:active {
 	margin: 0 0 0 10px;
 }
 
+.logo-5zonas {
+	margin: -2px 0 0 25px;
+}
 
 .center {
 	text-align: center;

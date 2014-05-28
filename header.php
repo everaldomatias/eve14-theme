@@ -74,6 +74,11 @@
                 <img src="<?php bloginfo('stylesheet_directory') ?>/images/tag.png">
                 </a>
             </div><!-- #tag -->
+
+			<?php if ( is_category( '5-zonas' ) ) : ?>
+				<img class="logo-5zonas" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-5zonas.png" alt="5 Zonas">	
+			<?php endif; ?>
+
 		</hgroup>
 
 		<nav role="navigation" class="site-navigation main-navigation">
