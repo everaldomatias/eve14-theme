@@ -452,7 +452,7 @@ a:active {
 }
 
 #page {
-	width: 820px;
+	max-width: 820px;
 	margin: 0 auto;
 }
 
@@ -691,7 +691,7 @@ object {
     height: 500px;
     margin: 10px auto 10px -12px;
     overflow: hidden;
-    width: 840px;
+    max-width: 840px;
 	clear: left;
 }
 
@@ -789,9 +789,10 @@ object {
 
 @media all and (max-width: 620px) {
 	#tag {
-		width: 136px;
-		height: 114px;
 		margin: 0 auto;
+		float: none;
+	}
+	hgroup {
 		float: none;
 	}
 	.cada-post {
