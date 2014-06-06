@@ -14,7 +14,7 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
             
 <?php 
-if ( in_category('graffiti') || in_category('atelie') || in_category('trabalhos') ) { ?>
+if ( in_category('graffiti') || in_category('atelie') || in_category('trabalhos') || in_category('5-zonas') ) { ?>
 
 <div class="list_carousel">
 
