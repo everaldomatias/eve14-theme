@@ -327,15 +327,15 @@ textarea {
 
 /* Links */
 a {
-	color: royalblue;
+	color: #c24148;
 }
 a:visited {
-	color: purple;
+	color: #c24148;
 }
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #932F34;
 }
 
 /* Alignment */
