@@ -1,6 +1,4 @@
 jQuery(document).ready(function($) {
-	// fitVids.
-	$( '.entry-content' ).fitVids();
 
 	// Responsive wp_video_shortcode().
 	$( '.wp-video-shortcode' ).parent( 'div' ).css( 'width', 'auto' );
@@ -15,7 +13,9 @@ jQuery(document).ready(function($) {
 		$(this).tab( 'show' );
 	});
 
-	// Tooltip.
-	$( '.odin-tooltip' ).tooltip();
+	// Fancybox
+    $('.fancybox').fancybox();
+
+    //http://stackoverflow.com/questions/20911124/jquery-fancybox-on-gallery-loaded-by-ajax-issues-with-grouping
 
 });

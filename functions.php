@@ -17,7 +17,7 @@
  * Sets content width.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 600;
+	$content_width = 960;
 }
 
 /**
@@ -25,19 +25,20 @@ if ( ! isset( $content_width ) ) {
  */
 require_once get_template_directory() . '/core/classes/class-bootstrap-nav.php';
 require_once get_template_directory() . '/core/classes/class-shortcodes.php';
-//require_once get_template_directory() . '/core/classes/class-shortcodes-menu.php';
+// require_once get_template_directory() . '/core/classes/class-shortcodes-menu.php';
 require_once get_template_directory() . '/core/classes/class-thumbnail-resizer.php';
 // require_once get_template_directory() . '/core/classes/class-theme-options.php';
 // require_once get_template_directory() . '/core/classes/class-options-helper.php';
 // require_once get_template_directory() . '/core/classes/class-post-type.php';
 // require_once get_template_directory() . '/core/classes/class-taxonomy.php';
-// require_once get_template_directory() . '/core/classes/class-metabox.php';
+require_once get_template_directory() . '/core/classes/class-metabox.php';
 // require_once get_template_directory() . '/core/classes/abstracts/abstract-front-end-form.php';
 // require_once get_template_directory() . '/core/classes/class-contact-form.php';
 // require_once get_template_directory() . '/core/classes/class-post-form.php';
 // require_once get_template_directory() . '/core/classes/class-user-meta.php';
 // require_once get_template_directory() . '/core/classes/class-post-status.php';
-//require_once get_template_directory() . '/core/classes/class-term-meta.php';
+// require_once get_template_directory() . '/core/classes/class-term-meta.php';
+require_once get_template_directory() . '/inc/graffiti.php';
 
 /**
  * Odin Widgets.
@@ -71,6 +72,10 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		 * Add post_thumbnails suport.
 		 */
 		add_theme_support( 'post-thumbnails' );
+		/**
+		 * Seta o thumbnail em 400 x 400 pixels.
+		 */
+		set_post_thumbnail_size( 400, 400, true );
 
 		/**
 		 * Add feed link.
@@ -174,7 +179,7 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 			'width'       => 240,
 			'flex-height' => true,
 		) );
-	}
+	}	
 }
 
 add_action( 'after_setup_theme', 'odin_setup_features' );
@@ -229,20 +234,12 @@ function odin_enqueue_scripts() {
 	wp_enqueue_script( 'html5shiv', $template_url . '/assets/js/html5.js' );
 	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 
-	// General scripts.
-	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-		// Bootstrap.
-		wp_enqueue_script( 'bootstrap', $template_url . '/assets/js/libs/bootstrap.min.js', array(), null, true );
+	// Fancybox
+	wp_enqueue_style( 'fancybox', $template_url . '/assets/js/libs/fancybox/jquery.fancybox.css', array(), null, 'all' );
+	wp_enqueue_script( 'fancybox', $template_url . '/assets/js/libs/fancybox/jquery.fancybox.pack.js', array(), null, true );
 
-		// FitVids.
-		wp_enqueue_script( 'fitvids', $template_url . '/assets/js/libs/jquery.fitvids.js', array(), null, true );
-
-		// Main jQuery.
-		wp_enqueue_script( 'odin-main', $template_url . '/assets/js/main.js', array(), null, true );
-	} else {
-		// Grunt main file with Bootstrap, FitVids and others libs.
-		wp_enqueue_script( 'odin-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
-	}
+	// Main jQuery.
+	wp_enqueue_script( 'odin-main', $template_url . '/assets/js/main.js', array(), null, true );
 
 	// Grunt watch livereload in the browser.
 	// wp_enqueue_script( 'odin-livereload', 'http://localhost:35729/livereload.js?snipver=1', array(), null, true );
