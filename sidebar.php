@@ -1,34 +1,20 @@
 <?php
 /**
- * The Sidebar containing the main widget areas.
+ * The sidebar containing the secondary widget area, displays on homepage, archives and posts.
  *
- * @package eve14-theme
- * @since eve14-theme 1.0
+ * If no active widgets in this sidebar, it will shows Recent Posts, Archives and Tag Cloud widgets.
+ *
+ * @package Odin
+ * @since 2.2.0
  */
 ?>
-		<div id="secondary" class="widget-area" role="complementary">
-			<?php do_action( 'before_sidebar' ); ?>
-			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
-				<aside id="search" class="widget widget_search">
-					<?php get_search_form(); ?>
-				</aside>
-
-				<aside id="archives" class="widget">
-					<h1 class="widget-title"><?php _e( 'Archives', 'eve14_theme' ); ?></h1>
-					<ul>
-						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-					</ul>
-				</aside>
-
-				<aside id="meta" class="widget">
-					<h1 class="widget-title"><?php _e( 'Meta', 'eve14_theme' ); ?></h1>
-					<ul>
-						<?php wp_register(); ?>
-						<li><?php wp_loginout(); ?></li>
-						<?php wp_meta(); ?>
-					</ul>
-				</aside>
-
-			<?php endif; // end sidebar widget area ?>
-		</div><!-- #secondary .widget-area -->
+<aside id="sidebar" class="<?php echo odin_classes_page_sidebar_aside(); ?>" role="complementary">
+	<?php
+		if ( ! dynamic_sidebar( 'main-sidebar' ) ) {
+			the_widget( 'WP_Widget_Recent_Posts', array( 'number' => 10 ) );
+			the_widget( 'WP_Widget_Archives', array( 'count' => 0, 'dropdown' => 1 ) );
+			the_widget( 'WP_Widget_Tag_Cloud' );
+		}
+	?>
+</aside><!-- #sidebar -->

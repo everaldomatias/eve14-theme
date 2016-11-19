@@ -2,93 +2,104 @@
 /**
  * The Header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="main">
+ * Displays all of the <head> section and everything up till #main div
  *
- * @package eve14-theme
- * @since eve14-theme 1.0
+ * @package Odin
+ * @since 2.2.0
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html class="no-js" <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
-<title><?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 */
-	global $page, $paged;
-
-	wp_title( '|', true, 'right' );
-
-	// Add the blog name.
-	bloginfo( 'name' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
-
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'eve14_theme' ), max( $paged, $page ) );
-
-	?></title>
-
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-<![endif]-->
-
-<?php wp_head(); ?>
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-9704918-6']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<?php if ( ! get_option( 'site_icon' ) ) : ?>
+		<link href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" rel="shortcut icon" />
+	<?php endif; ?>
+	<?php wp_head(); ?>
 </head>
 
-<?php
-	$obj_cat = get_the_category();
-	$this_cat = $obj_cat[0]->slug;
-?>
+<body <?php body_class(); ?>>
+	<a id="skippy" class="sr-only sr-only-focusable" href="#content">
+		<div class="container">
+			<span class="skiplink-text"><?php _e( 'Skip to content', 'odin' ); ?></span>
+		</div>
+	</a>
 
-<body <?php body_class( 'cat-' . $this_cat ); ?>>
+	<header id="header" role="banner">
+		<div class="container">
+			<div class="page-header hidden-xs">
 
-	<?php if ( is_front_page() ) { ?>
-	    <div id="bg-slider"></div><!-- #bg-slider -->
-	<?php } ?>
+				<?php odin_the_custom_logo(); ?>
 
-    <div id="page" class="hfeed site">
+				<?php if ( is_home() ) : ?>
+					<h1 class="site-title">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+							<?php bloginfo( 'name' ); ?>
+						</a>
+					</h1>
+					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				<?php else : ?>
+					<div class="site-title h1">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+							<?php bloginfo( 'name' ); ?>
+						</a>
+					</div>
+					<div class="site-description h2">
+						<?php bloginfo( 'description' ); ?>
+					</div>
+				<?php endif ?>
 
-	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header" role="banner">
-		<hgroup>
-			<div id="tag">
-            	<a href="<?php echo home_url( '/' ); ?>" rel="home">
-                <img src="<?php bloginfo('stylesheet_directory') ?>/images/tag.png">
-                </a>
-            </div><!-- #tag -->
+				<?php if ( get_header_image() ) : ?>
+					<div class="custom-header">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+						</a>
+					</div>
+				<?php endif; ?>
 
-			<?php if ( is_category( '5-zonas' ) || is_page( 310 ) || in_category('5-zonas') ) : ?>
-				<img class="logo-5zonas" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-5zonas.png" alt="5 Zonas">	
-			<?php endif; ?>
+			</div><!-- .page-header-->
 
-		</hgroup>
+			<div id="main-navigation" class="navbar navbar-default">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-navigation">
+					<span class="sr-only"><?php _e( 'Toggle navigation', 'odin' ); ?></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand visible-xs-block" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<?php bloginfo( 'name' ); ?>
+					</a>
+				</div>
+				<nav class="collapse navbar-collapse navbar-main-navigation" role="navigation">
+					<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'main-menu',
+								'depth'          => 2,
+								'container'      => false,
+								'menu_class'     => 'nav navbar-nav',
+								'fallback_cb'    => 'Odin_Bootstrap_Nav_Walker::fallback',
+								'walker'         => new Odin_Bootstrap_Nav_Walker()
+							)
+						);
+					?>
+					<form method="get" class="navbar-form navbar-right" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+						<label for="navbar-search" class="sr-only">
+							<?php _e( 'Search:', 'odin' ); ?>
+						</label>
+						<div class="form-group">
+							<input type="search" value="<?php echo get_search_query(); ?>" class="form-control" name="s" id="navbar-search" />
+						</div>
+						<button type="submit" class="btn btn-default"><?php _e( 'Search', 'odin' ); ?></button>
+					</form>
+				</nav><!-- .navbar-collapse -->
+			</div><!-- #main-navigation-->
 
-		<nav role="navigation" class="site-navigation main-navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- .site-navigation .main-navigation -->
-	</header><!-- #masthead .site-header -->
+		</div><!-- .container-->
+	</header><!-- #header -->
 
-	<div id="main" class="site-main">
+	<div id="wrapper" class="container">
+		<div class="row">

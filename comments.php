@@ -2,75 +2,72 @@
 /**
  * The template for displaying Comments.
  *
- * The area of the page that contains both current comments
- * and the comment form. The actual display of comments is
- * handled by a callback to eve14_theme_comment() which is
- * located in the functions.php file.
+ * The area of the page that contains comments and the comment form.
  *
- * @package eve14-theme
- * @since eve14-theme 1.0
+ * @package Odin
+ * @since 1.9.0
  */
 ?>
-
-<?php
-	/*
-	 * If the current post is protected by a password and
-	 * the visitor has not yet entered the password we will
-	 * return early without loading the comments.
-	 */
-	if ( post_password_required() )
+<section id="comments" class="content-wrap" itemscope itemtype="http://schema.org/Comment">
+	<?php if ( post_password_required() ) : ?>
+		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view all comments.', 'odin' ); ?></p>
+</section><!-- #comments -->
+		<?php
 		return;
-?>
+	endif;
 
-	<div id="comments" class="comments-area">
-
-	<?php // You can start editing here -- including this comment! ?>
-
-	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+	if ( have_comments() ) : ?>
+		<h2 id="comments-title" class="page-header">
 			<?php
-				printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'eve14_theme' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+			comments_number( __( '0 Comments', 'odin' ), __( '1 Comment', 'odin' ), __( '% Comments', 'odin' ) );
+			echo ' ' . __( 'to', 'odin' ) . ' <span>&quot;' . get_the_title() . '&quot;</span>';
 			?>
 		</h2>
-
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav role="navigation" id="comment-nav-above" class="site-navigation comment-navigation">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'eve14_theme' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'eve14_theme' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'eve14_theme' ) ); ?></div>
-		</nav><!-- #comment-nav-before .site-navigation .comment-navigation -->
-		<?php endif; // check for comment navigation ?>
-
-		<ol class="commentlist">
-			<?php
-				/* Loop through and list the comments. Tell wp_list_comments()
-				 * to use eve14_theme_comment() to format the comments.
-				 * If you want to overload this in a child theme then you can
-				 * define eve14_theme_comment() and that will be used instead.
-				 * See eve14_theme_comment() in inc/template-tags.php for more.
-				 */
-				wp_list_comments( array( 'callback' => 'eve14_theme_comment' ) );
-			?>
-		</ol><!-- .commentlist -->
-
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav role="navigation" id="comment-nav-below" class="site-navigation comment-navigation">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'eve14_theme' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'eve14_theme' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'eve14_theme' ) ); ?></div>
-		</nav><!-- #comment-nav-below .site-navigation .comment-navigation -->
-		<?php endif; // check for comment navigation ?>
-
-	<?php endif; // have_comments() ?>
-
-	<?php
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
-		<p class="nocomments"><?php _e( 'Comments are closed.', 'eve14_theme' ); ?></p>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+			<nav id="comment-nav-above">
+				<ul class="pager">
+					<li class="previous"><?php previous_comments_link( __( '&larr; Old Comments', 'odin' ) ); ?></li>
+					<li class="next"><?php next_comments_link( __( 'New Comments &rarr;', 'odin' ) ); ?></li>
+				</ul>
+			</nav>
+		<?php endif; ?>
+		<ul class="media-list">
+			<?php wp_list_comments( array( 'callback' => 'odin_comments_loop' ) ); ?>
+		</ul>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+			<nav id="comment-nav-above">
+				<ul class="pager">
+					<li class="previous"><?php previous_comments_link( __( '&larr; Old Comments', 'odin' ) ); ?></li>
+					<li class="next"><?php next_comments_link( __( 'New Comments &rarr;', 'odin' ) ); ?></li>
+				</ul>
+			</nav>
+		<?php endif; ?>
+	<?php endif; ?>
+	<?php if ( ! comments_open() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+		<p class="nocomments"><?php _e( 'Comments closed.', 'odin' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
-
-</div><!-- #comments .comments-area -->
+	<?php
+		$commenter 		= wp_get_current_commenter();
+		$req 			= get_option( 'require_name_email' );
+		$aria_req 		= ( $req ? " aria-required='true'" : '' );
+		$html_req 		= ( $req ? " required='required'" : '' );
+		$html5 			= current_theme_supports( 'html5', 'comment-form' ) ? 'html5' : null;
+		$comment_field 	= '<div class="comment-form-comment form-group"><label class="control-label" for="comment">' . __( 'Comment', 'odin' ) . ' <span class="required text-danger">*</span></label> ' .
+						 '<textarea id="comment" name="comment" class="form-control" cols="45" rows="8" aria-required="true" required="required"></textarea></div>';
+		$fields 		=  array(
+			'author' => '<div class="comment-form-author form-group">' . '<label for="author">' . __( 'Name', 'odin' ) . ( $req ? ' <span class="required text-danger">*</span>' : '' ) . '</label> ' .
+			            '<input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . $html_req . ' /></div>',
+			'email'  => '<div class="comment-form-email form-group"><label for="email">' . __( 'E-mail', 'odin' ) . ( $req ? ' <span class="required text-danger">*</span>' : '' ) . '</label> ' .
+			            '<input id="email" name="email" class="form-control" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" aria-describedby="email-notes"' . $aria_req . $html_req  . ' /></div>',
+			'url'    => '<div class="comment-form-url form-group"><label for="url">' . __( 'Website', 'odin' ) . '</label> ' .
+			            '<input id="url" name="url" class="form-control" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></div>'
+		);
+		comment_form( array(
+			'comment_notes_after' 	=> '',
+			'comment_field' 		=> $comment_field,
+			'fields' 				=> apply_filters( 'comment_form_default_fields', $fields ),
+			'class_submit' 			=> 'submit btn btn-default'
+		));
+	?>
+</section><!-- #comments -->

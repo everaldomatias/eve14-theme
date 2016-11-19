@@ -2,96 +2,58 @@
 /**
  * The template for displaying Archive pages.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * Used to display archive-type pages if nothing more specific matches a query.
+ * For example, puts together date-based pages if no date.php file exists.
  *
- * @package eve14-theme
- * @since eve14-theme 1.0
+ * If you'd like to further customize these archive views, you may create a
+ * new template file for each specific one. For example, Twenty Thirteen
+ * already has tag.php for Tag archives, category.php for Category archives,
+ * and author.php for Author archives.
+ *
+ * @link http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Odin
+ * @since 2.2.0
  */
 
 get_header(); ?>
 
-		<section id="primary" class="content-area">
-			<div id="content" class="site-content" role="main">
+	<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
 
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h1 class="page-title">
-						<?php
-							if ( is_category() ) {
-								printf( __( 'Category Archives: %s', 'eve14_theme' ), '<span>' . single_cat_title( '', false ) . '</span>' );
-
-							} elseif ( is_tag() ) {
-								printf( __( 'Tag Archives: %s', 'eve14_theme' ), '<span>' . single_tag_title( '', false ) . '</span>' );
-
-							} elseif ( is_author() ) {
-								/* Queue the first post, that way we know
-								 * what author we're dealing with (if that is the case).
-								*/
-								the_post();
-								printf( __( 'Author Archives: %s', 'eve14_theme' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
-								/* Since we called the_post() above, we need to
-								 * rewind the loop back to the beginning that way
-								 * we can run the loop properly, in full.
-								 */
-								rewind_posts();
-
-							} elseif ( is_day() ) {
-								printf( __( 'Daily Archives: %s', 'eve14_theme' ), '<span>' . get_the_date() . '</span>' );
-
-							} elseif ( is_month() ) {
-								printf( __( 'Monthly Archives: %s', 'eve14_theme' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
-
-							} elseif ( is_year() ) {
-								printf( __( 'Yearly Archives: %s', 'eve14_theme' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
-
-							} else {
-								_e( 'Archives', 'eve14_theme' );
-
-							}
-						?>
-					</h1>
 					<?php
-						if ( is_category() ) {
-							// show an optional category description
-							$category_description = category_description();
-							if ( ! empty( $category_description ) )
-								echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $category_description . '</div>' );
-
-						} elseif ( is_tag() ) {
-							// show an optional tag description
-							$tag_description = tag_description();
-							if ( ! empty( $tag_description ) )
-								echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' );
-						}
+						the_archive_title( '<h1 class="page-title">', '</h1>' );
+						the_archive_description( '<div class="taxonomy-description">', '</div>' );
 					?>
 				</header><!-- .page-header -->
 
-				<?php eve14_theme_content_nav( 'nav-above' ); ?>
+				<?php
+					// Start the Loop.
+					while ( have_posts() ) : the_post();
 
-				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php
-						/* Include the Post-Format-specific template for the content.
-						 * If you want to overload this in a child theme then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						/*
+						 * Include the post format-specific template for the content. If you want to
+						 * use this in a child theme, then include a file called called content-___.php
+						 * (where ___ is the post format) and that will be used instead.
 						 */
 						get_template_part( 'content', get_post_format() );
-					?>
 
-				<?php endwhile; ?>
+					endwhile;
 
-				<?php eve14_theme_content_nav( 'nav-below' ); ?>
+					// Page navigation.
+					odin_paging_nav();
 
-			<?php else : ?>
+				else :
+					// If no content, include the "No posts found" template.
+					get_template_part( 'content', 'none' );
 
-				<?php get_template_part( 'no-results', 'archive' ); ?>
+				endif;
+			?>
 
-			<?php endif; ?>
+	</main><!-- #main -->
 
-			</div><!-- #content .site-content -->
-		</section><!-- #primary .content-area -->
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();

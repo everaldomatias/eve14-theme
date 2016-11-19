@@ -3,26 +3,32 @@
  * The template for displaying all pages.
  *
  * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * Please note that this is the WordPress construct of pages and that other
+ * 'pages' on your WordPress site will use a different template.
  *
- * @package eve14-theme
- * @since eve14-theme 1.0
+ * @package Odin
+ * @since 2.2.0
  */
 
 get_header(); ?>
 
-		<div id="primary" class="content-area">
-			<div id="content" class="site-content" role="main">
+	<main id="content" class="<?php echo odin_classes_page_full(); ?>" tabindex="-1" role="main">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+				// Start the Loop.
+				while ( have_posts() ) : the_post();
 
-					<?php get_template_part( 'content', 'page' ); ?>
+					// Include the page content template.
+					get_template_part( 'content', 'page' );
 
-				<?php endwhile; // end of the loop. ?>
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+				endwhile;
+			?>
 
-			</div><!-- #content .site-content -->
-		</div><!-- #primary .content-area -->
+	</main><!-- #main -->
 
-<?php get_footer(); ?>
+<?php
+get_footer();

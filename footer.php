@@ -2,21 +2,23 @@
 /**
  * The template for displaying the footer.
  *
- * Contains the closing of the id=main div and all content after
+ * Contains footer content and the closing of the
+ * #main div element.
  *
- * @package eve14-theme
- * @since eve14-theme 1.0
+ * @package Odin
+ * @since 2.2.0
  */
 ?>
 
-	</div><!-- #main .site-main -->
+		</div><!-- .row -->
+	</div><!-- #wrapper -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<p class="center">Todos os Direitos Reservados - 2010 | <?php the_time('Y'); ?> - Everaldo Matias (Eve14)</p>
-	</footer><!-- #colophon .site-footer -->
-</div><!-- #page .hfeed .site -->
+	<footer id="footer" role="contentinfo">
+		<div class="container">
+			<p>&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a> - <?php _e( 'All rights reserved', 'odin' ); ?> | <?php echo sprintf( __( 'Powered by the <a href="%s" rel="nofollow" target="_blank">Odin</a> forces and <a href="%s" rel="nofollow" target="_blank">WordPress</a>.', 'odin' ), 'http://wpod.in/', 'http://wordpress.org/' ); ?></p>
+		</div><!-- .container -->
+	</footer><!-- #footer -->
 
-<?php wp_footer(); ?>
-
+	<?php wp_footer(); ?>
 </body>
 </html>

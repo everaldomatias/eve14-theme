@@ -1,41 +1,70 @@
-_s
-===
+# Odin Framework #
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+[Ver essa documentação em Português do Brasil](https://github.com/wpbrasil/odin/blob/master/docs/README-pt_BR.md)
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+![Odin Framework](https://i.imgur.com/DdeMgUx.png)
 
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A helpful 404 template.
-* A sample custom header implementation in inc/custom-header.php that can be activated by uncommenting one line in functions.php and adding the code snippet found the comments of inc/custom-header.php to your header.php template.
-* Custom template tags in inc/template-tags that keep your templates clean and neat and prevent code duplication.
-* Sample theme options in /inc/theme-options/ that can be activated by uncommenting one line in functions.php.
-* Some small tweaks in /inc/tweaks.php that can improve your theming experience. They can be activated by uncommenting one line in functions.php.
-* Keyboard navigation for image attachment templates. The script can be found in js/keyboard-navigation.js. It’s enqueued in functions.php.
-* A script at js/small-menu.js that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It’s enqueued in functions.php.
-* 5 sample CSS layouts in /layouts: Two sidebars on the left, two sidebars on the right, a sidebar on either side of your content, and two-column layouts with sidebars on either side.
-* Smartly organized starter CSS in style.css that will help you to quickly get your design off the ground.
-* The GPL license in license.txt. :) Use it to make something cool.
+* [Website](http://wpod.in/)
+* [Odin Expo](http://expo.wpod.in/)
+* [GitHub](https://github.com/wpbrasil/odin)
+* [WordPress Brasil Group on Facebook](https://www.facebook.com/groups/wordpress.brasil)
 
-Getting Started
----------------
+## Project Description ##
 
-If you want to keep it simple, head over to http://underscores.me and generate your `_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
+Welcome to Odin, a base-theme developed by [WordPress Brasil Group](https://www.facebook.com/groups/wordpress.brasil), to help on agile development of themes for WordPress.
 
-If you want to set things up manually, download `_s` from github. The first thing you want to do is copy the `_s` directory and change the name to something else — Like, say, `megatherium` — then you'll need to do a three-step find and replace on the name in all the templates.
+## Installation ##
 
-1. Search for `_s` inside single quotations to capture the text domain.
-2. Search for `_s_` for to capture all the function names
-3. Search for `_s` with a space before it to replace all the occurrences of it in comments. (You'd replace this with the capitalized version of your theme name.)
+Send the folder "odin" to the default themes folder from WordPress `wp-content/themes` or send the zipball using the WordPress Theme Installer.
 
-OR
+## Documentation ##
 
-* Search for: `'_s'` & replace with: `'megatherium'`
-* Search for: `_s_` & replace with: `megatherium_`
-* Search for: ` _s` & replace with: ` Megatherium`
+Informations about how-to use the classes and functions from Odin is on the [Official Wiki](https://github.com/wpbrasil/odin/wiki/)
 
-Then, update the stylesheet header in style.css and the links in footer.php with your own information. Next, update or delete this readme.
+## Plugins Support ##
 
-Now you're ready to go! The next step is easy to say but harder to do: make an awesome WordPress theme. :)
+Odin supports natively these plugins:
 
-Good luck!
+* [WooCommerce](http://wordpress.org/extend/plugins/woocommerce/)
+* [JetPack](http://wordpress.org/extend/plugins/jetpack/) Infinite Scroll
+
+## References ##
+
+* [Bootstrap](http://getbootstrap.com/)
+* [Bootstrap Sass](https://github.com/twbs/bootstrap-sass)
+* [HTML5shiv](https://github.com/aFarkas/html5shiv)
+* [matchMedia() polyfill](https://github.com/paulirish/matchMedia.js/)
+* [Respond.js](https://github.com/scottjehl/Respond)
+* [Sass](http://sass-lang.com/)
+* [Compass](http://compass-style.org/)
+* [Grunt.js](http://gruntjs.com/)
+* [aq_resize](https://github.com/sy4mil/Aqua-Resizer)
+* [FitVids](https://github.com/davatron5000/FitVids.js)
+* [EditorConfig](http://editorconfig.org/)
+* [goqr.me](http://goqr.me/)
+* [Google Maps](https://developers.google.com/maps/)
+
+## Bugs and Sugestions ##
+
+The Odin Framework is an **Open Source** project. Anyone can (and should) help us to improve it.
+
+Report bugs or do suggestions using the [Issues/Project Forum](https://github.com/wpbrasil/odin/issues)
+
+## Contribute to the Project ##
+
+To contribute, just click on the **Fork** button, create a *Branch*, improve the code and send it with a **Pull Request**.
+
+More details about how to contribute and send Pull Requests in [GitHub Collaborating](https://help.github.com/categories/63/articles).
+
+[How to colaborate to opensource projects on GitHub](http://www.youtube.com/watch?v=H3olaBo83As)
+
+## Changelog ##
+
+[Changelog here!](https://github.com/wpbrasil/odin/blob/master/docs/CHANGELOG.md)
+
+## Copyright and License ##
+
+Copyright 2013 - 2016 - WordPress Brasil Group.
+
+The PHP code is licensed with [GPLv2](http://www.gnu.org/licenses/gpl-2.0.txt).
+All the CSS, SCSS, JS, images files and others, not including the PHP files is licensed with [MIT](http://opensource.org/licenses/MIT) or by the license specified inside the file.

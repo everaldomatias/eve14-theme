@@ -1,20 +1,24 @@
 <?php
 /**
- * The template used for displaying page content in page.php
+ * The template used for displaying page content.
  *
- * @package eve14-theme
- * @since eve14-theme 1.0
+ * @package Odin
+ * @since 2.2.0
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-	</header><!-- .entry-header -->
+	<?php the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' ); ?>
 
 	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'eve14_theme' ), 'after' => '</div>' ) ); ?>
-		<?php edit_post_link( __( 'Edit', 'eve14_theme' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php
+			the_content();
+			wp_link_pages( array(
+				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'odin' ) . '</span>',
+				'after'       => '</div>',
+				'link_before' => '<span>',
+				'link_after'  => '</span>',
+			) );
+		?>
 	</div><!-- .entry-content -->
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post-## -->

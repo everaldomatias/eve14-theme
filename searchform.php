@@ -1,13 +1,19 @@
 <?php
 /**
- * The template for displaying search forms in eve14-theme
+ * The template for displaying Search Form.
  *
- * @package eve14-theme
- * @since eve14-theme 1.0
+ * @package Odin
+ * @since 2.2.0
  */
 ?>
-	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
-		<label for="s" class="assistive-text"><?php _e( 'Search', 'eve14_theme' ); ?></label>
-		<input type="text" class="field" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" id="s" placeholder="<?php esc_attr_e( 'Search &hellip;', 'eve14_theme' ); ?>" />
-		<input type="submit" class="submit" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'eve14_theme' ); ?>" />
-	</form>
+
+<form method="get" id="searchform" class="form-inline" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+	<div class="input-group">
+		<input type="search" class="form-control" name="s" id="s" value="<?php echo get_search_query(); ?>" placeholder="<?php esc_attr_e( 'Search', 'odin' ); ?>" />
+		<span class="input-group-btn">
+			<button type="submit" class="btn btn-default" value="<?php esc_attr_e( 'Search', 'odin' ); ?>">
+				<i class="glyphicon glyphicon-search"></i>
+			</button>
+		</span><!-- /input-group-btn -->
+    </div><!-- /input-group -->
+</form><!-- /searchform -->
