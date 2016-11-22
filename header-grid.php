@@ -21,24 +21,7 @@
 </head>
 
 <body <?php body_class( 'grid' ); ?>>
-	<header id="header" role="banner">
-		<div class="container">
-			<div class="page-header hidden-xs">
 
-				<?php odin_the_custom_logo(); ?>
-
-				<?php if ( get_header_image() ) : ?>
-					<div class="custom-header">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-						</a>
-					</div>
-				<?php endif; ?>
-
-			</div><!-- .page-header-->
-
-		</div><!-- .container-->
-	</header><!-- #header -->
+	<?php odin_the_custom_logo(); ?>
 
 	<div id="wrapper" class="col-sm-12 nopadding">
-		<div class="row">

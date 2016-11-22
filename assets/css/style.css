@@ -23,10 +23,30 @@ Author URI: http://wpod.in/#colaboradores
 body.grid {
 	background-color: #333333;
 }
-body.grid .page-header {
-	border: none;
-	position: absolute;
-	width: 100%;
+body.grid .custom-logo {
+	height: auto;
+	left: 50%;
+    margin-left: -80px;
+    margin-top: 20px;
+    max-width: 160px;
+    position: absolute;
+    transition: all .2s ease-in-out;
+    z-index: 9;
+}
+@media all and ( max-width: 768px ) {
+	body.grid .custom-logo {
+    	margin-left: -65px;
+    	max-width: 130px;
+	}
+}
+@media all and ( max-width: 480px ) {
+	body.grid .custom-logo {
+    	margin-left: -50px;
+    	max-width: 100px;
+	}
+}
+body.grid #wrapper {
+	
 }
 
 /* Header */

@@ -7,7 +7,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'nopadding col-sm-3' ); ?>>
 	<a href="<?php the_post_thumbnail_url( 'full' ); ?>" class="fancybox" data-fancybox-group="<?php the_ID(); ?>" title="<?php the_title(); ?>">
 		<?php the_post_thumbnail( 'thumbnail' ); ?>
 	</a>
