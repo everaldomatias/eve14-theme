@@ -27,6 +27,7 @@ body.grid .page-header {
 	border: none;
 	position: absolute;
 	width: 100%;
+	z-index: 9;
 }
 
 /* Header */

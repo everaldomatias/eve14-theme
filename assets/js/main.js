@@ -14,7 +14,20 @@ jQuery(document).ready(function($) {
 	});
 
 	// Fancybox
-    $('.fancybox').fancybox();
+    $('body').on('click', 'a.fancybox', function(e) {
+	    // previne a ação padrao: no caso de um link, previne que ele abra o link pelo navegador
+	    e.preventDefault();
+	    // cria os dados para o AJAX
+	    var data = {
+			 action: 'graffiti_gallery',
+			 post_id: $( this ).attr( 'data-id' )
+		};
+	    // executa o ajax
+		$.get( ajax_object.ajax_url, data, function(response) {
+	        $images = JSON.parse(response);
+	        $.fancybox( $images, {type: 'image'});
+		});
+	});
 
     //http://stackoverflow.com/questions/20911124/jquery-fancybox-on-gallery-loaded-by-ajax-issues-with-grouping
 

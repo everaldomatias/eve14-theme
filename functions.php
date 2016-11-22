@@ -239,7 +239,13 @@ function odin_enqueue_scripts() {
 	wp_enqueue_script( 'fancybox', $template_url . '/assets/js/libs/fancybox/jquery.fancybox.pack.js', array(), null, true );
 
 	// Main jQuery.
-	wp_enqueue_script( 'odin-main', $template_url . '/assets/js/main.js', array(), null, true );
+	wp_register_script( 'odin-main', $template_url . '/assets/js/main.js', array(), null, true );	
+
+	// Localize
+	wp_localize_script( 'odin-main', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+
+	// Main jQuery.
+	wp_enqueue_script( 'odin-main' );
 
 	// Grunt watch livereload in the browser.
 	// wp_enqueue_script( 'odin-livereload', 'http://localhost:35729/livereload.js?snipver=1', array(), null, true );
@@ -306,6 +312,11 @@ require_once get_template_directory() . '/inc/optimize.php';
  */
 require_once get_template_directory() . '/inc/template-tags.php';
 
+/*
+ * Kirki Framework
+ */
+require_once get_template_directory() . '/inc/custom-kirki.php';
+
 /**
  * WooCommerce compatibility files.
  */
@@ -315,3 +326,33 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/functions.php';
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
 }
+
+function graffiti_gallery_callback() {
+	if ( ! isset( $_REQUEST[ 'post_id' ] ) ) {
+		wp_die( 'nao enviou o post id' );
+	}
+	// cria um array pra conter todos urls de imagens
+	$all_images = array();
+	// pega o post id que vai ser enviado junto no ajax
+	$post_id = intval( $_REQUEST[ 'post_id' ] );
+	// pega o campo de imagens do odin
+	$images = get_post_meta(  $post_id, 'graffitis_plupload', true );
+	// verifica se ele retornou certo
+	if ( $images ) {
+		// o odin deixa as imagens numa string separadas por virgula, entao precisamos dividir com explode em um array
+		$images_id = explode( ',', $images );
+		// percorre o array que acabamos de dividir acima
+		foreach ( $images_id as $image_id ) {
+			// essa função vai nos retornar a URL da imagem, junto com o width e o height;
+			$image = wp_get_attachment_image_src( $image_id, 'full', false );
+			// colocamos o URL da imagem dentro do array criado para conter todas imagens
+			$all_images[] = $image[0];
+		}
+	}
+	// transforma o array com todas imagens em JSON, pra poder ser lido no JS
+	echo json_encode( $all_images );
+	// mata a requisição.. sem esse cara no final o WP poe um 0 maldito no meio da resposta, rs
+	wp_die();
+}
+add_action( 'wp_ajax_graffiti_gallery', 'graffiti_gallery_callback' );
+add_action( 'wp_ajax_nopriv_graffiti_gallery', 'graffiti_gallery_callback' );
