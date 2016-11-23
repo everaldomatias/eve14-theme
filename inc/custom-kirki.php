@@ -104,7 +104,7 @@ function kirki_fields( $fields ) {
 	$fields[] = array(
 	    'type'        => 'text',
 	    'settings'    => 'form_contato',
-	    'label'       => __( 'Formulário de Contato', 'odin' ),
+	    'label'       => __( 'ID do Formulário de Contato (CF7)', 'odin' ),
 	    'section'     => 'graffiti_grid',
 	    'default'     => '',
 	    'priority'    => 10,

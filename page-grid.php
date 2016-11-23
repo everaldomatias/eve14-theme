@@ -51,7 +51,7 @@ get_header( 'grid' ); ?>
 
 				$form = get_theme_mod( 'form_contato' );
 				if ( !empty( $form ) ) {
-					echo do_shortcode( $form );
+					echo do_shortcode( '[contact-form-7 id="'. $form .'"]' );
 				}
 
 			?>
