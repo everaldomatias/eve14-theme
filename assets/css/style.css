@@ -65,8 +65,33 @@ body.grid article.col-sm-3.nopadding {
 		width: 20%;
 	}
 }
+/* Contato */
+body.grid .contato {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	width: 100%;
+}
+body.grid .contato .container {
+	max-width: 800px;
+}
+body.grid .contato .container .wpcf7 input[ type="text" ],
+body.grid .contato .container .wpcf7 input[ type="email" ],
+body.grid .contato .container .wpcf7 textarea {
+	background-color: #666;
+	border: none;
+	border-radius: 5px;
+	color: #FFF;
+	padding: 10px;
+}
 /* Header */
 #header .custom-logo {
 	display: block;
 	margin: 20px auto;
+}
+/* CF7 */
+.wpcf7 input[ type="text" ],
+.wpcf7 input[ type="email" ],
+.wpcf7 textarea {
+	width: 100%;
 }
