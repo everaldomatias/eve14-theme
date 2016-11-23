@@ -25,22 +25,44 @@ body.grid .custom-logo {
 	height: auto;
 	left: 50%;
     margin-left: -80px;
-    margin-top: 20px;
+    margin-top: 10%;
     max-width: 160px;
     position: absolute;
     transition: all .2s ease-in-out;
     z-index: 9;
+}
+body.grid article.col-sm-3.nopadding {
+	transition: all .2s ease-in-out;
 }
 @media all and ( max-width: 768px ) {
 	body.grid .custom-logo {
     	margin-left: -65px;
     	max-width: 130px;
 	}
+	body.grid article.col-sm-3.nopadding {
+		float: left;
+		width: 50%;
+	}
 }
 @media all and ( max-width: 480px ) {
 	body.grid .custom-logo {
     	margin-left: -50px;
     	max-width: 100px;
+	}
+	body.grid article.col-sm-3.nopadding {
+		float: none;
+		margin: 0 auto;
+		width: 90%;
+	}
+}
+@media all and ( max-width: 400px ) {
+	body.grid article.col-sm-3.nopadding {
+		width: 100%;
+	}
+}
+@media all and ( min-width: 1600px ) {
+	body.grid article.col-sm-3.nopadding {
+		width: 20%;
 	}
 }
 /* Header */
