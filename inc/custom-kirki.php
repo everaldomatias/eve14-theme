@@ -76,6 +76,10 @@ add_filter( 'kirki/config', 'kirki_config' );
 function kirki_add_panel( $wp_customize ) {
 	// Add sections
 	// This section will be inside the "typography" panel
+	$wp_customize->add_section( 'contatos', array(
+		'title'       => __( 'Contatos', 'odin' ),
+		'priority'    => 20,
+	) );
 	$wp_customize->add_section( 'graffiti_grid', array(
 		'title'       => __( 'Graffiti Grid', 'odin' ),
 		'priority'    => 20,
@@ -97,7 +101,23 @@ function kirki_fields( $fields ) {
 	    'type'        => 'text',
 	    'settings'    => 'telefone',
 	    'label'       => __( 'Telefone', 'odin' ),
-	    'section'     => 'graffiti_grid',
+	    'section'     => 'contatos',
+	    'default'     => '',
+	    'priority'    => 10,
+	);
+	$fields[] = array(
+	    'type'        => 'text',
+	    'settings'    => 'email',
+	    'label'       => __( 'E-mail', 'odin' ),
+	    'section'     => 'contatos',
+	    'default'     => '',
+	    'priority'    => 10,
+	);
+	$fields[] = array(
+	    'type'        => 'text',
+	    'settings'    => 'instagram',
+	    'label'       => __( 'Instagram', 'odin' ),
+	    'section'     => 'contatos',
 	    'default'     => '',
 	    'priority'    => 10,
 	);
