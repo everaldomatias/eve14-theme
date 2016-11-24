@@ -49,15 +49,8 @@ get_header( 'grid' ); ?>
 
 				endif;
 
-				$form = get_theme_mod( 'form_contato' );
-				if ( !empty( $form ) ) {
-					get_template_part( 'parts/home', 'contato' );
-				}
-
 			?>
-
-
-
+			
 	</main><!-- #content -->
 
 <?php

@@ -22,13 +22,45 @@ jQuery(document).ready(function($) {
 			 action: 'graffiti_gallery',
 			 post_id: $( this ).attr( 'data-id' )
 		};
-	    // executa o ajax
+	    // xecuta o ajax
 		$.get( ajax_object.ajax_url, data, function(response) {
 	        $images = JSON.parse(response);
 	        $.fancybox( $images, {type: 'image'});
 		});
 	});
 
-    //http://stackoverflow.com/questions/20911124/jquery-fancybox-on-gallery-loaded-by-ajax-issues-with-grouping
+	// Window load event used just in case window height is dependant upon images
+	$(window).bind("load", function() { 
+       
+       var $contato = $( "body.grid .contato" )
+           positionContato()
+
+        function positionContato() {
+        	screenSize = $(window).height();
+        	body = $( document.body );
+        	bodySize = body.height();
+           	contatoSize = $contato.height();
+           	scrollSize = bodySize - contatoSize*2;
+
+           	body.css({
+           		'padding-bottom': screenSize
+           	})
+
+        	if ( $(window).scrollTop() > scrollSize ) {
+        		$contato.css({
+        			opacity: 1
+        		})
+        	} else {
+        		$contato.css({
+        			opacity: 0
+        		})
+        	};
+        }
+           
+       $( window )
+        	.scroll( positionContato )
+            .resize( positionContato )
+              
+	});
 
 });

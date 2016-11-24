@@ -67,9 +67,14 @@ body.grid article.col-sm-3.nopadding {
 }
 /* Contato */
 body.grid .contato {
+	background-color: #222222;
+	bottom: 0;
 	clear: both;
 	display: block;
 	overflow: hidden;
+	opacity: 0;
+	position: fixed;
+	transition: all .2s ease-in-out;
 	width: 100%;
 }
 body.grid .contato .container {

@@ -18,6 +18,13 @@
 		</div><!-- .container -->
 	</footer><!-- #footer -->
 
+	<?php
+		$form = get_theme_mod( 'form_contato' );
+		if ( !empty( $form ) ) {
+			get_template_part( 'parts/home', 'contato' );
+		}
+	?>
+
 	<?php wp_footer(); ?>
 </body>
 </html>
