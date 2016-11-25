@@ -38,12 +38,13 @@ jQuery(document).ready(function($) {
         function positionContato() {
         	screenSize = $(window).height();
         	body = $( document.body );
-        	bodySize = body.height();
-           	contatoSize = $contato.height();
+        	wrapper = $( "#wrapper" );
+        	bodySize = wrapper.height();
+        	contatoSize = $contato.height();
            	scrollSize = bodySize - contatoSize*2;
 
-           	body.css({
-           		'padding-bottom': screenSize
+           	wrapper.css({
+           		'padding-bottom': contatoSize
            	})
 
         	if ( $(window).scrollTop() > scrollSize ) {

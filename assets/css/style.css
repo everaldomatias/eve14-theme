@@ -17,6 +17,10 @@ Author URI: http://wpod.in/#colaboradores
 	padding-left: 0 !important;
 	padding-right: 0 !important;
 }
+#content {
+	min-height: 2014px;
+	overflow: hidden;
+}
 /* Grid Template  */
 body.grid {
 	background-color: #333333;
