@@ -24,6 +24,7 @@ Author URI: http://wpod.in/#colaboradores
 /* Grid Template  */
 body.grid {
 	background-color: #333333;
+	margin-bottom: 0;
 }
 body.grid .custom-logo {
 	height: auto;
