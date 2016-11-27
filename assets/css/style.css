@@ -17,14 +17,16 @@ Author URI: http://wpod.in/#colaboradores
 	padding-left: 0 !important;
 	padding-right: 0 !important;
 }
+body {
+	font-family: 'Droid Sans', sans-serif;
+}
 #content {
 	min-height: 2014px;
 	overflow: hidden;
 }
 /* Grid Template  */
 body.grid {
-	background-color: #333333;
-	margin-bottom: 0;
+	background-color: #1e1e1e;
 }
 body.grid .custom-logo {
 	height: auto;
@@ -75,9 +77,11 @@ body.grid .contato {
 	background-color: #222222;
 	bottom: 0;
 	clear: both;
+	color: #666;
 	display: block;
 	overflow: hidden;
 	opacity: 0;
+	padding: 15px 0 5px;
 	position: fixed;
 	transition: all .2s ease-in-out;
 	width: 100%;
@@ -85,14 +89,58 @@ body.grid .contato {
 body.grid .contato .container {
 	max-width: 800px;
 }
+body.grid .contato .container .wpcf7-form {
+	padding: 15px 0;
+
+}
 body.grid .contato .container .wpcf7 input[ type="text" ],
 body.grid .contato .container .wpcf7 input[ type="email" ],
-body.grid .contato .container .wpcf7 textarea {
+body.grid .contato .container .wpcf7 textarea,
+body.grid .contato .container .wpcf7 input[ type="submit" ] {
 	background-color: #666;
-	border: none;
+	border: 1px solid #666;
 	border-radius: 5px;
 	color: #FFF;
 	padding: 10px;
+	transition: all .2s ease-in-out;
+}
+body.grid .contato .container .wpcf7 input[ type="text" ]:focus,
+body.grid .contato .container .wpcf7 input[ type="email" ]:focus,
+body.grid .contato .container .wpcf7 textarea:focus,
+body.grid .contato .container .wpcf7 input[ type="submit" ]:focus {
+	background-color: #A9A9A9;
+	color: #1e1e1e;
+	outline: none;
+}
+.contato .infos > span {
+	color: #666;
+	display: block;
+	font-size: 1em;
+	padding: 15px 0 0;
+	width: 100%;
+}
+.contato .infos > span a {
+	color: #666;
+	transition: all .2s ease-in-out;
+}
+.contato .infos > span a:hover {
+	color: #CCC;
+	text-decoration: none;
+}
+.contato .infos > span .glyphicon {
+	font-size: 1.5em;
+	margin-right: 10px;
+}
+@media all and ( max-width: 768px ) {
+	.contato .infos {
+		padding-bottom: 30px;
+		text-align: center;
+	}
+	.contato .infos > span {
+		display: inline-block;
+		margin-right: 25px;
+		width: auto;
+	}
 }
 /* Header */
 #header .custom-logo {
