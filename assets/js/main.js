@@ -25,7 +25,10 @@ jQuery(document).ready(function($) {
 	    // xecuta o ajax
 		$.get( ajax_object.ajax_url, data, function(response) {
 	        $images = JSON.parse(response);
-	        $.fancybox( $images, {type: 'image'});
+	        $.fancybox( $images, {
+	        	type: 'image',
+	        	padding: 0
+	        });
 		});
 	});
 
@@ -47,15 +50,17 @@ jQuery(document).ready(function($) {
            		'padding-bottom': contatoSize
            	})
 
-        	if ( $(window).scrollTop() > scrollSize ) {
-        		$contato.css({
-        			opacity: 1
-        		})
-        	} else {
-        		$contato.css({
-        			opacity: 0
-        		})
-        	};
+           	if ( $(window).width() >= 768 ) {
+           		if ( $(window).scrollTop() > scrollSize ) {
+	        		$contato.css({
+	        			opacity: 1
+	        		})
+	        	} else {
+	        		$contato.css({
+	        			opacity: 0
+	        		})
+	        	};
+           	};        	
         }
            
        $( window )

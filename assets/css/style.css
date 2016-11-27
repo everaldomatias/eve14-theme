@@ -21,7 +21,7 @@ body {
 	font-family: 'Droid Sans', sans-serif;
 }
 #content {
-	min-height: 2014px;
+	min-height: 900px;
 	overflow: hidden;
 }
 /* Grid Template  */
@@ -132,6 +132,14 @@ body.grid .contato .container .wpcf7 input[ type="submit" ]:focus {
 	margin-right: 10px;
 }
 @media all and ( max-width: 768px ) {
+	body.grid .custom-logo {
+		position: fixed;
+	}
+	body.grid .contato {
+		background-color: transparent;
+		opacity: 1;
+		position: relative;
+	}
 	.contato .infos {
 		padding-bottom: 30px;
 		text-align: center;

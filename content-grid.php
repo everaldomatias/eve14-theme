@@ -8,7 +8,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'col-sm-3 nopadding' ); ?>>
-	<a href="<?php the_post_thumbnail_url( 'full' ); ?>" class="fancybox" data-id="<?php the_ID(); ?>" title="<?php the_title(); ?>">
+	<a href="<?php the_post_thumbnail_url( 'large' ); ?>" class="fancybox" data-id="<?php the_ID(); ?>" title="<?php the_title(); ?>">
 		<?php the_post_thumbnail( 'thumbnail' ); ?>
 	</a>
 </article><!-- #post-## -->
