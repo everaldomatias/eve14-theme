@@ -42,6 +42,9 @@ body.grid article.col-sm-3.nopadding {
 	transition: all .2s ease-in-out;
 }
 @media all and ( max-width: 768px ) {
+	#wrapper {
+		padding-bottom: 0 !important;
+	}
 	body.grid .custom-logo {
     	margin-left: -65px;
     	max-width: 130px;

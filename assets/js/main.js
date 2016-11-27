@@ -46,11 +46,10 @@ jQuery(document).ready(function($) {
         	contatoSize = $contato.height();
            	scrollSize = bodySize - contatoSize*2;
 
-           	wrapper.css({
-           		'padding-bottom': contatoSize
-           	})
-
            	if ( $(window).width() >= 768 ) {
+           		wrapper.css({
+	           		'padding-bottom': contatoSize
+	           	})
            		if ( $(window).scrollTop() > scrollSize ) {
 	        		$contato.css({
 	        			opacity: 1
