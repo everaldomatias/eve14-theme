@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
 	    e.preventDefault();
 
 	    // adiciona o icone loading...
-	   	$('<div id="fancybox-loading"><div></div></div>').appendTo('body');
+	   	$('<div id="fancybox-loading"><div></div></div>').appendTo('html');
 
 	    // cria os dados para o AJAX
 	    var data = {
