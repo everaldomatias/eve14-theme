@@ -17,21 +17,90 @@ Author URI: http://wpod.in/#colaboradores
 	padding-left: 0 !important;
 	padding-right: 0 !important;
 }
-
-
+#content {
+	min-height: 2014px;
+	overflow: hidden;
+}
 /* Grid Template  */
 body.grid {
 	background-color: #333333;
 }
-body.grid .page-header {
-	border: none;
-	position: absolute;
-	width: 100%;
-	z-index: 9;
+body.grid .custom-logo {
+	height: auto;
+	left: 50%;
+    margin-left: -80px;
+    margin-top: 10%;
+    max-width: 160px;
+    position: absolute;
+    transition: all .2s ease-in-out;
+    z-index: 9;
 }
-
+body.grid article.col-sm-3.nopadding {
+	transition: all .2s ease-in-out;
+}
+@media all and ( max-width: 768px ) {
+	body.grid .custom-logo {
+    	margin-left: -65px;
+    	max-width: 130px;
+	}
+	body.grid article.col-sm-3.nopadding {
+		float: left;
+		width: 50%;
+	}
+}
+@media all and ( max-width: 480px ) {
+	body.grid .custom-logo {
+    	margin-left: -50px;
+    	max-width: 100px;
+	}
+	body.grid article.col-sm-3.nopadding {
+		float: none;
+		margin: 0 auto;
+		width: 90%;
+	}
+}
+@media all and ( max-width: 400px ) {
+	body.grid article.col-sm-3.nopadding {
+		width: 100%;
+	}
+}
+@media all and ( min-width: 1600px ) {
+	body.grid article.col-sm-3.nopadding {
+		width: 20%;
+	}
+}
+/* Contato */
+body.grid .contato {
+	background-color: #222222;
+	bottom: 0;
+	clear: both;
+	display: block;
+	overflow: hidden;
+	opacity: 0;
+	position: fixed;
+	transition: all .2s ease-in-out;
+	width: 100%;
+}
+body.grid .contato .container {
+	max-width: 800px;
+}
+body.grid .contato .container .wpcf7 input[ type="text" ],
+body.grid .contato .container .wpcf7 input[ type="email" ],
+body.grid .contato .container .wpcf7 textarea {
+	background-color: #666;
+	border: none;
+	border-radius: 5px;
+	color: #FFF;
+	padding: 10px;
+}
 /* Header */
 #header .custom-logo {
 	display: block;
 	margin: 20px auto;
+}
+/* CF7 */
+.wpcf7 input[ type="text" ],
+.wpcf7 input[ type="email" ],
+.wpcf7 textarea {
+	width: 100%;
 }

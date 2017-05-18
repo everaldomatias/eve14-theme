@@ -49,15 +49,8 @@ get_header( 'grid' ); ?>
 
 				endif;
 
-				$form = get_theme_mod( 'form_contato' );
-				if ( !empty( $form ) ) {
-					echo do_shortcode( $form );
-				}
-
 			?>
-
-
-
+			
 	</main><!-- #content -->
 
 <?php
