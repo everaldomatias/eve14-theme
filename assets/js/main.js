@@ -17,6 +17,10 @@ jQuery(document).ready(function($) {
     $('body').on('click', 'a.fancybox', function(e) {
 	    // previne a ação padrao: no caso de um link, previne que ele abra o link pelo navegador
 	    e.preventDefault();
+
+	    // adiciona o icone loading...
+	   	$('<div id="fancybox-loading"><div></div></div>').appendTo('body');
+
 	    // cria os dados para o AJAX
 	    var data = {
 			 action: 'graffiti_gallery',
