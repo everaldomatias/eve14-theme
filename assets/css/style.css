@@ -161,3 +161,7 @@ body.grid .contato .container .wpcf7 textarea:-moz-placeholder { /* Firefox 18- 
 .wpcf7 textarea {
 	width: 100%;
 }
+/* Footer */
+footer#footer {
+	display: none;
+}
