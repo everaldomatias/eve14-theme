@@ -330,6 +330,9 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
 }
 
+/* WooCommerce Hooks */
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
 function graffiti_gallery_callback() {
 	if ( ! isset( $_REQUEST[ 'post_id' ] ) ) {
 		wp_die( 'nao enviou o post id' );
@@ -359,3 +362,11 @@ function graffiti_gallery_callback() {
 }
 add_action( 'wp_ajax_graffiti_gallery', 'graffiti_gallery_callback' );
 add_action( 'wp_ajax_nopriv_graffiti_gallery', 'graffiti_gallery_callback' );
+
+/* Funcao para Debugar Hook's */
+function hook_debug( $hook ) {
+	global $wp_filter;
+	echo '<pre>';
+	var_dump( $wp_filter[ $hook ] );
+	echo '</pre>';
+}
