@@ -38,6 +38,9 @@ body.grid .custom-logo {
 body.grid article.col-sm-3.nopadding {
 	transition: all .2s ease-in-out;
 }
+body.grid article.col-sm-3.nopadding:hover {
+	opacity: 0.75;
+}
 @media all and ( max-width: 768px ) {
 	body.grid .custom-logo {
     	margin-left: -65px;
