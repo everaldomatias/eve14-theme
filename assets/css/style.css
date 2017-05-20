@@ -13,33 +13,51 @@ Author URI: http://wpod.in/#colaboradores
 
 /* Custom CSS */
 /* Geral */
+body {
+	background-color: #333333;
+	color: #cccccc;
+}
+body .custom-logo {
+	height: auto;
+	max-width: 160px;
+}
+a {	transition: all .2s ease-in-out; }
+a:link {
+	color: #ffffff;
+	font-weight: bold;
+}
+a:visited { color: #dddddd; }
+a:hover {
+	color: #E97E20;
+	text-decoration: none;
+}
+a:active { color: #E97E20; }
 .nopadding {
 	padding-left: 0 !important;
 	padding-right: 0 !important;
-}
-#content {
-	min-height: 2014px;
-	overflow: hidden;
 }
 @media all and ( min-width: 768px ) {
 	html.fancybox-margin {
 		margin-right: 17.5px;
 	}
 }
+/* Header */
+.page-header {
+	border-bottom: none;
+}
 
 /* Grid Template  */
-body.grid {
-	background-color: #333333;
-}
 body.grid .custom-logo {
-	height: auto;
 	left: 50%;
     margin-left: -80px;
     margin-top: 10%;
-    max-width: 160px;
     position: absolute;
     transition: all .2s ease-in-out;
     z-index: 9;
+}
+body.grid #content {
+	min-height: 2014px;
+	overflow: hidden;
 }
 body.grid article.col-sm-3.nopadding {
 	transition: all .2s ease-in-out;

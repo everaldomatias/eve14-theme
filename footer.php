@@ -18,7 +18,7 @@
 
 	<?php
 		$form = get_theme_mod( 'form_contato' );
-		if ( !empty( $form ) ) {
+		if ( !empty( $form ) && is_page_template( 'page-grid.php' ) ) {
 			get_template_part( 'parts/home', 'contato' );
 		}
 	?>
