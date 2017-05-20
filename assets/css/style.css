@@ -21,6 +21,12 @@ Author URI: http://wpod.in/#colaboradores
 	min-height: 2014px;
 	overflow: hidden;
 }
+@media all and ( min-width: 768px ) {
+	html.fancybox-margin {
+		margin-right: 17.5px;
+	}
+}
+
 /* Grid Template  */
 body.grid {
 	background-color: #333333;
