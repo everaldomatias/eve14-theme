@@ -53,11 +53,13 @@ jQuery(document).ready(function($) {
 
         	if ( $(window).scrollTop() > scrollSize ) {
         		$contato.css({
-        			opacity: 1
+        			opacity: 1,
+        			'z-index': 1
         		})
         	} else {
         		$contato.css({
-        			opacity: 0
+        			opacity: 0,
+        			'z-index': -1
         		})
         	};
         }
