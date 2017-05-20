@@ -50,6 +50,9 @@ body.grid article.col-sm-3.nopadding:hover {
 		float: left;
 		width: 50%;
 	}
+	body.grid .fancybox-skin {
+		padding: 5px !important;
+	}
 }
 @media all and ( max-width: 480px ) {
 	body.grid .custom-logo {
@@ -60,6 +63,9 @@ body.grid article.col-sm-3.nopadding:hover {
 		float: none;
 		margin: 0 auto;
 		width: 90%;
+	}
+	body.grid .fancybox-skin {
+		padding: 0 !important;
 	}
 }
 @media all and ( max-width: 400px ) {
