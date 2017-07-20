@@ -31,7 +31,13 @@
 		<div class="container">
 			<div class="page-header hidden-xs">
 
-				<?php odin_the_custom_logo(); ?>
+				<?php if ( is_page_template( 'page-dletra.php' ) && $logo = get_field( 'logo' ) ): ?>
+					<img class="custom-logo" src="<?php echo esc_url( $logo ); ?>">
+				<?php else: ?>
+					<?php odin_the_custom_logo(); ?>
+				<?php endif ?>
+
+				
 
 				<?php if ( get_header_image() ) : ?>
 					<div class="custom-header">

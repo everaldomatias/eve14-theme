@@ -22,6 +22,25 @@ get_header( 'dletra' ); ?>
 				// Include the page content template.
 				get_template_part( 'content', 'page' );
 
+				$images = get_post_meta( get_the_ID(), 'page_plupload', true );
+
+				if ( $images ) {
+					echo '<div class="page-gallery">';
+					$images_id = explode( ',', $images );
+
+					foreach ( $images_id as $image_id ) {
+						$image = wp_get_attachment_image_src( $image_id, 'thumbnail', false );
+						$image_full = wp_get_attachment_image_src( $image_id, 'full', false );
+						
+						echo '<article class="col-sm-3 nopadding">';
+						echo '<a href="' . $image_full[0] . '" rel="group" class="fancybox">';
+						echo '<img src="' . $image[0] . '">';
+						echo '</a>';
+						echo '</article><!-- #post-## -->';
+					}
+					echo '</div><!-- page-gallery -->';
+				}
+
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
 					comments_template();
