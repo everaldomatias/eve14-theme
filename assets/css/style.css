@@ -45,6 +45,9 @@ a:active { color: #E97E20; }
 .page-header {
 	border-bottom: none;
 }
+#main-navigation {
+	display: none;
+}
 
 /* Grid Template  */
 body.grid .custom-logo {
@@ -101,6 +104,10 @@ body.grid article.col-sm-3.nopadding:hover {
 	body.grid article.col-sm-3.nopadding {
 		width: 20%;
 	}
+}
+/* Page */
+body.page h1.entry-title {
+	text-align: center;
 }
 /* Contato */
 body.grid .contato {
