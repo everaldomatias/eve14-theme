@@ -342,7 +342,7 @@ function graffiti_gallery_callback() {
 	// pega o post id que vai ser enviado junto no ajax
 	$post_id = intval( $_REQUEST[ 'post_id' ] );
 	// pega o campo de imagens do odin
-	$images = get_post_meta(  $post_id, 'graffitis_plupload', true );
+	$images = get_post_meta( $post_id, 'graffitis_plupload', true );
 	// verifica se ele retornou certo
 	if ( $images ) {
 		// o odin deixa as imagens numa string separadas por virgula, entao precisamos dividir com explode em um array
@@ -362,6 +362,36 @@ function graffiti_gallery_callback() {
 }
 add_action( 'wp_ajax_graffiti_gallery', 'graffiti_gallery_callback' );
 add_action( 'wp_ajax_nopriv_graffiti_gallery', 'graffiti_gallery_callback' );
+
+function page_metabox() {
+
+    $page_metabox = new Odin_Metabox(
+        'page_metabox', // Slug/ID of the Metabox (Required)
+        'Galeria de Imagens', // Metabox name (Required)
+        'page', // Slug of Post Type (Optional)
+        'normal', // Context (options: normal, advanced, or side) (Optional)
+        'high' // Priority (options: high, core, default or low) (Optional)
+    );
+
+    $page_metabox->set_fields(
+        array(
+            /**
+             * Default input examples.
+             */
+
+            // Image Plupload field.
+            array(
+                'id'          => 'page_plupload', // Required
+                'label'       => __( 'Fotos', 'odin' ), // Required
+                'type'        => 'image_plupload', // Required
+                // 'default'     => '', // Optional (image attachment ids separated with comma)
+                'description' => __( 'Adicione as imagens para a sua galeria de imagens.', 'odin' ), // Optional
+            )
+        )
+    );
+}
+
+add_action( 'init', 'page_metabox', 1 );
 
 /* Funcao para Debugar Hook's */
 function hook_debug( $hook ) {

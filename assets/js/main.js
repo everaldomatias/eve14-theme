@@ -13,8 +13,8 @@ jQuery(document).ready(function($) {
 		$(this).tab( 'show' );
 	});
 
-	// Fancybox
-    $('body').on('click', 'a.fancybox', function(e) {
+	// Fancybox Home
+    $('body.home').on('click', 'a.fancybox', function(e) {
 	    // previne a ação padrao: no caso de um link, previne que ele abra o link pelo navegador
 	    e.preventDefault();
 
@@ -33,6 +33,9 @@ jQuery(document).ready(function($) {
 		});
 	});
 
+	/* This is basic - uses default settings */
+	$(".page-template-page-dletra a.fancybox").fancybox();
+	
 	// Window load event used just in case window height is dependant upon images
 	$(window).bind("load", function() { 
        

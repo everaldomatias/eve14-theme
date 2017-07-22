@@ -21,6 +21,9 @@ body .custom-logo {
 	height: auto;
 	max-width: 160px;
 }
+body.page-template-page-dletra .custom-logo {
+	max-width: 220px;
+}
 a {	transition: all .2s ease-in-out; }
 a:link {
 	color: #ffffff;
@@ -35,6 +38,10 @@ a:active { color: #E97E20; }
 .nopadding {
 	padding-left: 0 !important;
 	padding-right: 0 !important;
+}
+img {
+	height: auto;
+	max-width: 100%;
 }
 @media all and ( min-width: 768px ) {
 	html.fancybox-margin {
@@ -185,6 +192,16 @@ body.grid .contato .container .wpcf7 textarea:-moz-placeholder { /* Firefox 18- 
 .wpcf7 input[ type="email" ],
 .wpcf7 textarea {
 	width: 100%;
+}
+/* D Letra */
+body.page-template-page-dletra .page-gallery {
+	padding-top: 30px;
+}
+body.page-template-page-dletra article.col-sm-3.nopadding {
+	transition: all .2s ease-in-out;
+}
+body.page-template-page-dletra article.col-sm-3.nopadding:hover {
+	opacity: 0.75;
 }
 /* Footer */
 footer#footer {
