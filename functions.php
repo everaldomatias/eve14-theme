@@ -76,6 +76,8 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		 * Seta o thumbnail em 400 x 400 pixels.
 		 */
 		set_post_thumbnail_size( 400, 400, true );
+		add_image_size( 'slider-dletra', 1600, 500, array( 'center', 'center' ) );
+		add_image_size( 'slider-dletra-responsive', 768, 500, array( 'center', 'center' ) );
 
 		/**
 		 * Add feed link.

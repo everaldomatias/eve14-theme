@@ -19,6 +19,18 @@ get_header( 'dletra' ); ?>
 			// Start the Loop.
 			while ( have_posts() ) : the_post();
 
+				if ( function_exists( 'get_field' ) && $slider = get_field( 'slider' ) ) {
+			  		echo '<div class="slider">';
+			  		echo do_shortcode( get_field( 'slider' ) );
+			  		echo '</div><!-- .slider -->';
+			  	}
+
+			  	if ( function_exists( 'get_field' ) && $slider = get_field( 'slider_responsivo' ) ) {
+			  		echo '<div class="slider-resposivo">';
+			  		echo do_shortcode( get_field( 'slider_responsivo' ) );
+			  		echo '</div><!-- .slider-resposivo -->';
+			  	}
+
 				// Include the page content template.
 				get_template_part( 'content', 'page' );
 
