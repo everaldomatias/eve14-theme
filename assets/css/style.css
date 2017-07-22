@@ -194,7 +194,16 @@ body.grid .contato .container .wpcf7 textarea:-moz-placeholder { /* Firefox 18- 
 	width: 100%;
 }
 /* D Letra */
+body.page-template-page-dletra main#content {
+	float: none;
+	margin: 0 auto;
+	max-width: 1600px;
+}
+body.page-template-page-dletra .entry-title {
+	display: none;
+}
 body.page-template-page-dletra .page-gallery {
+	overflow: hidden;
 	padding-top: 30px;
 }
 body.page-template-page-dletra article.col-sm-3.nopadding {
