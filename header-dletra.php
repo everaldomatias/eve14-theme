@@ -28,8 +28,9 @@
 	</a>
 
 	<header id="header" role="banner">
+		
 		<div class="container">
-			<div class="page-header hidden-xs">
+			<div class="page-header">
 
 				<?php if ( is_page_template( 'page-dletra.php' ) && $logo = get_field( 'logo' ) ): ?>
 					<img class="custom-logo" src="<?php echo esc_url( $logo ); ?>">
@@ -39,5 +40,11 @@
 
 			</div><!-- .page-header-->
 		</div><!-- .container-->
+
+		<?php
+		  	if ( $telefone = get_field( 'telefone' ) ) {
+		  		echo '<a class="telefone" href="whatsapp://send?text=Olá, gostaria de saber mais sobre as placas personalizadas com graffiti :) !&phone=' . $telefone . '"></a>';
+		  	}
+		?>
 
 	</header><!-- #header -->

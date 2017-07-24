@@ -194,6 +194,24 @@ body.grid .contato .container .wpcf7 textarea:-moz-placeholder { /* Firefox 18- 
 	width: 100%;
 }
 /* D Letra */
+body.page-template-page-dletra #header .telefone {
+	background: url( '../images/whatsapp.png' ) center center no-repeat transparent;
+	background-size: 80%;
+	bottom: 15px;
+	border-radius: 50px;
+	display: block;
+	height: 70px;
+	overflow: hidden;
+	position: fixed;
+	right: 15px;
+	width: 70px;
+	z-index: 9999;
+}
+@media all and ( min-width: 768px ) {
+	body.page-template-page-dletra #header .telefone {
+		display: none;
+	}
+}
 body.page-template-page-dletra #header .page-header {
 	margin-top: 40px;
 }
@@ -230,6 +248,20 @@ body.page-template-page-dletra article.col-sm-3.nopadding {
 }
 body.page-template-page-dletra article.col-sm-3.nopadding:hover {
 	opacity: 0.75;
+}
+@media all and ( max-width: 768px ) {
+	body.page-template-page-dletra article.col-sm-3.nopadding {
+		float: left;
+		width: 50%;
+	}
+}
+@media all and ( max-width: 500px ) {
+	body.page-template-page-dletra article.col-sm-3.nopadding {
+		float: none;
+		margin: 0 auto;
+		max-width: 400px;
+		width: 100%;
+	}
 }
 /* Footer */
 footer#footer {
