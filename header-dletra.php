@@ -43,7 +43,7 @@
 
 		<?php
 		  	if ( $telefone = get_field( 'telefone' ) ) {
-		  		echo '<a class="telefone" href="whatsapp://send?text=Olá, gostaria de saber mais sobre as placas personalizadas com graffiti :) !&phone=' . $telefone . '"></a>';
+		  		echo '<a class="telefone" href="whatsapp://send?text=Olá, gostaria de saber mais sobre as placas personalizadas com graffiti!&phone=' . $telefone . '"></a>';
 		  	}
 		?>
 
