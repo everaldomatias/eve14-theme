@@ -32,7 +32,7 @@
 		<div class="container">
 			<div class="page-header">
 
-				<?php if ( is_page_template( 'page-dletra.php' ) && $logo = get_field( 'logo' ) ): ?>
+				<?php if ( is_page_template( 'page-landing.php' ) && $logo = get_field( 'logo' ) ): ?>
 					<img class="custom-logo" src="<?php echo esc_url( $logo ); ?>">
 				<?php else: ?>
 					<?php odin_the_custom_logo(); ?>
@@ -43,7 +43,11 @@
 
 		<?php
 		  	if ( $telefone = get_field( 'telefone' ) ) {
-		  		echo '<a class="telefone" href="whatsapp://send?text=Olá, gostaria de saber mais sobre as placas personalizadas com graffiti!&phone=' . $telefone . '"></a>';
+		  		if ( $mensagem = get_field( 'mensagem' ) ) {
+		  			echo '<a class="telefone" href="whatsapp://send?text=' . esc_html( $mensagem ) . '&phone=' . $telefone . '"></a>';
+		  		} else {
+		  			echo '<a class="telefone" href="whatsapp://send?text=Olá, estou entrando em contato pela página ' . get_the_title() . ' do seu site !&phone=' . $telefone . '"></a>';
+		  		}
 		  	}
 		?>
 

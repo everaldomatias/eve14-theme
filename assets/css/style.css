@@ -21,7 +21,7 @@ body .custom-logo {
 	height: auto;
 	max-width: 160px;
 }
-body.page-template-page-dletra .custom-logo {
+body.page-template-page-landing .custom-logo {
 	max-width: 220px;
 }
 a {	transition: all .2s ease-in-out; }
@@ -194,7 +194,7 @@ body.grid .contato .container .wpcf7 textarea:-moz-placeholder { /* Firefox 18- 
 	width: 100%;
 }
 /* D Letra */
-body.page-template-page-dletra #header .telefone {
+body.page-template-page-landing #header .telefone {
 	background: url( '../images/whatsapp.png' ) center center no-repeat transparent;
 	background-size: 80%;
 	bottom: 15px;
@@ -208,55 +208,55 @@ body.page-template-page-dletra #header .telefone {
 	z-index: 9999;
 }
 @media all and ( min-width: 768px ) {
-	body.page-template-page-dletra #header .telefone {
+	body.page-template-page-landing #header .telefone {
 		display: none;
 	}
 }
-body.page-template-page-dletra #header .page-header {
+body.page-template-page-landing #header .page-header {
 	margin-top: 40px;
 }
 @media all and ( min-width: 768px ) {
-	body.page-template-page-dletra .slider {
+	body.page-template-page-landing .slider {
 		display: block;
 	}
-	body.page-template-page-dletra .slider-responsivo {
+	body.page-template-page-landing .slider-responsivo {
 		display: none;
 	}
 }
 @media all and ( max-width: 768px ) {
-	body.page-template-page-dletra .slider-responsivo {
+	body.page-template-page-landing .slider-responsivo {
 		display: block;
 	}
-	body.page-template-page-dletra .slider {
+	body.page-template-page-landing .slider {
 		display: none;
 	}
 }
-body.page-template-page-dletra main#content {
+body.page-template-page-landing main#content {
 	float: none;
 	margin: 0 auto;
 	max-width: 1600px;
 }
-body.page-template-page-dletra .entry-title {
+body.page-template-page-landing .entry-title {
 	display: none;
 }
-body.page-template-page-dletra .page-gallery {
+body.page-template-page-landing .page-gallery {
 	overflow: hidden;
 	padding-top: 30px;
 }
-body.page-template-page-dletra article.col-sm-3.nopadding {
+body.page-template-page-landing article.col-sm-3.nopadding {
 	transition: all .2s ease-in-out;
 }
-body.page-template-page-dletra article.col-sm-3.nopadding:hover {
+body.page-template-page-landing article.col-sm-3.nopadding:hover {
 	opacity: 0.75;
 }
 @media all and ( max-width: 768px ) {
-	body.page-template-page-dletra article.col-sm-3.nopadding {
+	body.page-template-page-landing article.col-sm-3.nopadding {
 		float: left;
 		width: 50%;
 	}
 }
 @media all and ( max-width: 500px ) {
-	body.page-template-page-dletra article.col-sm-3.nopadding {
+	body.page-template-page-landing article.col-sm-3.nopadding {
 		float: none;
 		margin: 0 auto;
 		max-width: 400px;

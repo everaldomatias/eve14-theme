@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying all pages.
- * Template name: d_letra
+ * Template name: Landing Page
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages and that other
@@ -11,7 +11,7 @@
  * @since 2.2.0
  */
 
-get_header( 'dletra' ); ?>
+get_header( 'landing' ); ?>
 
 	<main id="content" class="<?php echo odin_classes_page_full(); ?>" tabindex="-1" role="main">
 
@@ -63,4 +63,4 @@ get_header( 'dletra' ); ?>
 	</main><!-- #main -->
 
 <?php
-get_footer( 'dletra' );
+get_footer( 'landing' );
