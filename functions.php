@@ -402,3 +402,22 @@ function hook_debug( $hook ) {
 	var_dump( $wp_filter[ $hook ] );
 	echo '</pre>';
 }
+
+/**
+ * Set image size when theme is activated
+ * Testado em WP 4.7.*
+ */
+if ( ! function_exists( 'e14_theme_activated' ) ) {
+    function e14_theme_activated() {
+        // set thumbnail size in settings > media
+        update_option( 'thumbnail_size_w', 400 );
+        update_option( 'thumbnail_size_h', 400 );
+        // set medium size in settings > media
+        update_option( 'medium_size_w', 800 );
+        update_option( 'medium_size_h', 800 );
+        // set large size in settings > media
+        update_option( 'large_size_w', 1280 );
+        update_option( 'large_size_h', 1280 );
+    }
+    add_action( 'after_switch_theme', 'e14_theme_activated' );
+}
