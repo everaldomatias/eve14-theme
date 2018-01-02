@@ -17,39 +17,8 @@
 get_header( 'grid' ); ?>
 
 	<main id="content" class="<?php echo odin_classes_page_full(); ?> nopadding" tabindex="-1" role="main">
-
-			<?php
-				$args =	array(
-					'post_type' => 'graffiti',
-					'posts_per_page' => '-1'
-				);
-				
-				// Query
-				$graffiti = new WP_Query( $args );
-
-				if ( $graffiti->have_posts() ) :
-					// Start the Loop.
-					while ( $graffiti->have_posts() ) : $graffiti->the_post();
-
-						/*
-						 * Include the post format-specific template for the content. If you want to
-						 * use this in a child theme, then include a file called called content-___.php
-						 * (where ___ is the post format) and that will be used instead.
-						 */
-						get_template_part( 'content', 'grid' );
-
-					endwhile;
-
-					// Post navigation.
-					odin_paging_nav();
-
-				else :
-					// If no content, include the "No posts found" template.
-					get_template_part( 'content', 'none' );
-
-				endif;
-
-			?>
+		
+		<?php do_action( 'grid_graffitis' ) ?>
 			
 	</main><!-- #content -->
 

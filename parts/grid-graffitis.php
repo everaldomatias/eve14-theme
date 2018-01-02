@@ -32,13 +32,13 @@
 ?>
 
 <section itemscope itemtype="" class="grid-graffitis">
-	<div class="container">
-		<?php if ( $query->have_posts() ) :		
-			while ( $query->have_posts() ) :
-				$query->the_post();
-				the_title();
-				echo '<br>';
-			endwhile;
-		endif; ?>
-	</div><!-- /.container -->
+	<?php if ( $query->have_posts() ) :		
+		while ( $query->have_posts() ) : $query->the_post(); ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<a href="<?php the_post_thumbnail_url( 'full' ); ?>" class="fancybox" data-id="<?php the_ID(); ?>" title="<?php the_title(); ?>">
+					<?php the_post_thumbnail( 'thumbnail' ); ?>
+				</a>
+			</article><!-- #post-## -->
+		<?php endwhile;
+	endif; ?>
 </section><!-- /.grid-graffitis -->

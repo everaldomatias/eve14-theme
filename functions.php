@@ -41,6 +41,11 @@ require_once get_template_directory() . '/core/classes/class-metabox.php';
 require_once get_template_directory() . '/inc/graffiti.php';
 
 /**
+ * Hooks.
+ */
+require_once get_template_directory() . '/inc/hooks.php';
+
+/**
  * Odin Widgets.
  */
 require_once get_template_directory() . '/core/classes/widgets/class-widget-like-box.php';
@@ -420,4 +425,16 @@ if ( ! function_exists( 'e14_theme_activated' ) ) {
         update_option( 'large_size_h', 1280 );
     }
     add_action( 'after_switch_theme', 'e14_theme_activated' );
+}
+
+if ( ! function_exists( 'e14_get_grid_graffitis' ) ) {
+
+	/**
+	 * Hooked in grid_graffitis
+	 * See: hooks.php
+	 */
+	function e14_get_grid_graffitis() {
+		get_template_part( 'parts/grid', 'graffitis' );
+	}
+
 }
