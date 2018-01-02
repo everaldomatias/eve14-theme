@@ -438,3 +438,14 @@ if ( ! function_exists( 'e14_get_grid_graffitis' ) ) {
 	}
 
 }
+
+if ( ! function_exists( 'e14_get_single_graffitis' ) ) {
+
+	/**
+	 * Hooked in single_graffitis
+	 * See: hooks.php
+	 */
+	function e14_get_single_graffitis() {
+		get_template_part( 'parts/single', 'graffitis' );
+	}
+}

@@ -267,3 +267,19 @@ body.page-template-page-landing article.col-sm-3.nopadding:hover {
 footer#footer {
 	display: none;
 }
+
+/* Graffiti */
+.grid-graffitis {
+
+}
+.grid-graffitis article {
+	float: left;
+	width: 20%;
+}
+
+/* Single Graffiti */
+.single-graffiti .custom-logo {
+	float: none;
+	margin: 0 auto;
+	position: relative;
+}
