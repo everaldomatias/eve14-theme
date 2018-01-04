@@ -264,6 +264,12 @@ function odin_enqueue_scripts() {
 	if ( is_singular() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	if ( is_singular( 'graffiti' ) ) {
+		wp_enqueue_style( 'bootstrap-min', $template_url . '/assets/css/bootstrap.min.css', array(), null, 'all' );
+		wp_enqueue_style( 'full-slider', $template_url . '/assets/css/full-slider.css', array(), null, 'all' );
+		wp_enqueue_script( 'bootstrap-min', $template_url . '/assets/js/bootstrap/bootstrap.bundle.min.js', array(), null, true );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'odin_enqueue_scripts', 1 );
