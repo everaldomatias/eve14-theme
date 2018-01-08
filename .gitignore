@@ -8,7 +8,6 @@
 *.swp
 *.vi
 *.ini
-*.scss
 *~
 
 # OS or Editor folders
