@@ -1,2 +1,2 @@
 <?php
-//silence
+wp_footer();

@@ -19,5 +19,21 @@ function e14_header_styles() {
 }
 
 function e14_get_logo() {
-	echo "Logo aqui";
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+	
+	if ( ! is_home() || ! is_front_page() ) {
+		echo '<a class="title-logo" href="' . esc_url( home_url() ) . '">';
+	}	
+	
+		if ( has_custom_logo() ) {
+		        echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+		} else {
+		        echo '<h1>' . get_bloginfo( 'name' ) . '</h1>';
+		}
+
+	if ( ! is_home() || ! is_front_page() ) {
+		echo '</a>';
+	}
+
 }
