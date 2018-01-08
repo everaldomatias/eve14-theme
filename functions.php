@@ -45,5 +45,6 @@ if ( ! function_exists( 'e14_enqueue_scripts' ) ) {
 	add_action( 'wp_enqueue_scripts', 'e14_enqueue_scripts', 1 );
 }
 
+require 'inc/e14-cpts.php';
 require 'inc/e14-functions.php';
 require 'inc/e14-hooks.php';
