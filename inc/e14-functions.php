@@ -1,6 +1,6 @@
 <?php
 /**
- * Aplica inline style no Header .
+ * Aplica inline style no Header.
  */
 function e14_header_styles() {
 	$is_header_image = get_header_image();
@@ -18,6 +18,9 @@ function e14_header_styles() {
 	}
 }
 
+/**
+ * Retorna o Custom Logo.
+ */
 function e14_get_logo() {
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
 	$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
@@ -35,5 +38,18 @@ function e14_get_logo() {
 	if ( ! is_home() || ! is_front_page() ) {
 		echo '</a>';
 	}
+}
 
+/**
+ * Abre a div .row.
+ */
+function e14_open_row() {
+	echo '<div class="row">';
+}
+
+/**
+ * Fecha a div .row.
+ */
+function e14_close_row() {
+	echo '</div><!-- row -->';
 }
