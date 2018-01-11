@@ -53,3 +53,9 @@ function e14_open_row() {
 function e14_close_row() {
 	echo '</div><!-- row -->';
 }
+
+function e14_grid_graffiti( $query ) {
+	if ( $query->is_home() && $query->is_main_query() ) {
+        $query->set( 'post_type', 'graffiti' );
+    }
+}
