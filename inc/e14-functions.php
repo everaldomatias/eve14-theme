@@ -27,13 +27,15 @@ function e14_get_logo() {
 	
 	if ( ! is_home() || ! is_front_page() ) {
 		echo '<a class="title-logo" href="' . esc_url( home_url() ) . '">';
-	}	
-	
-		if ( has_custom_logo() ) {
-		        echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
-		} else {
-		        echo '<h1>' . get_bloginfo( 'name' ) . '</h1>';
-		}
+	}
+		
+		echo '<div class="wrap-logo">';
+			if ( has_custom_logo() ) {
+			        echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+			} else {
+			        echo '<h1>' . get_bloginfo( 'name' ) . '</h1>';
+			}
+		echo '<div><!-- .wrap-logo -->';
 
 	if ( ! is_home() || ! is_front_page() ) {
 		echo '</a>';
