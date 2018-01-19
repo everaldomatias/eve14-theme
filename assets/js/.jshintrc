@@ -12,7 +12,7 @@
 	"trailing": true,
 	"undef": true,
 	"unused": true,
-
+	"devel": true,
 	"browser": true,
 
 	"globals": {
@@ -20,6 +20,7 @@
 		"Backbone": false,
 		"jQuery": false,
 		"AOS": true,
-		"wp": false
+		"wp": false,
+		"devel": true
 	}
 }

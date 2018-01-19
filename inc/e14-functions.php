@@ -29,7 +29,7 @@ function e14_get_logo() {
 		echo '<a class="title-logo" href="' . esc_url( home_url() ) . '">';
 	}
 		
-		echo '<div class="wrap-logo">';
+		echo '<div data-aos="fade-down" class="wrap-logo">';
 			if ( has_custom_logo() ) {
 			        echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
 			} else {
