@@ -11,6 +11,9 @@ Author URI: https://everaldomatias.github.io/
 */
 
 @import
-        "variables",           // Theme       Custom Variables
-        "layout"               // Theme       Custom Layout
+        "core",					// AOS Core
+        "easing",				// AOS Easing
+        "animations",			// AOS Animations
+        "variables",			// Theme       Custom Variables
+        "layout"				// Theme       Custom Layout
 ;

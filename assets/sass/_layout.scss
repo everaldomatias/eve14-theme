@@ -32,3 +32,18 @@ img {
 .hfeed.site {
 	overflow: hidden;
 }
+
+/* Header */
+.wrap-logo {
+	padding: 15px;
+	text-align: center;
+	width: 100%;
+	img {
+		max-width: 160px; 
+	}
+}
+body.home {
+	.wrap-logo {
+		padding: 100px 15px;
+	}
+}
