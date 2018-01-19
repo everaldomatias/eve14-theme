@@ -56,8 +56,16 @@ function e14_close_row() {
 	echo '</div><!-- row -->';
 }
 
+/**
+ * Define o loop exibido na Home.
+ *
+ * @see  inc/e14-hooks.php
+ */
 function e14_grid_graffiti( $query ) {
 	if ( $query->is_home() && $query->is_main_query() ) {
+        /* Tipo de Post */
         $query->set( 'post_type', 'graffiti' );
+        /* Quantidade de Posts */
+        $query->set( 'posts_per_page', 12 );
     }
 }
