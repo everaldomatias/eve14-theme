@@ -27,7 +27,7 @@
 	<?php
 	do_action( 'e14_before_content' ); ?>
 
-	<div id="content" class="site-content" tabindex="-1">
+	<div id="content" data-aos="fade-up" class="site-content" tabindex="-1">
 		<div class="col-full">
 
 		<?php

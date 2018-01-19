@@ -1,0 +1,24 @@
+article.graffiti {
+	position: relative;
+	.desc {
+		bottom: 0;
+		color: #ffffff;
+		display: none;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		z-index: 9;
+		&:hover {
+			display: block;
+		}
+	}
+	img {
+		-moz-transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+		transition: all 0.2s;
+		&:hover {
+			filter: grayscale( 100% );
+			opacity: 0.3;
+		}
+	}
+}

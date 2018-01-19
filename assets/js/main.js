@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
 	AOS.init({
 		disable: 'mobile',
 		startEvent: 'load',
-		easing: 'ease-in-sine',
+		easing: 'ease',
 		delay: 100,
 		duration: 500
 	});
@@ -16,5 +16,4 @@ jQuery(document).ready(function() {
 		jQuery( logo ).css( 'padding-bottom', result );
 		jQuery( 'body.home #content' ).css( 'margin-top', height );
 	}
-		
 });
