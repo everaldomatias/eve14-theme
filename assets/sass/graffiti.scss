@@ -1,24 +1,31 @@
 article.graffiti {
 	position: relative;
 	.desc {
-		bottom: 0;
+		bottom: 25%;
 		color: #ffffff;
 		display: none;
+		font-size: 2em;
+		left: 5%;
 		position: absolute;
 		text-align: center;
-		width: 100%;
+		width: 90%;
 		z-index: 9;
-		&:hover {
+		-moz-transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+		transition: all 0.2s;
+	}
+	&:hover {
+		.desc {
 			display: block;
+		}
+		img {
+			filter: grayscale( 100% );
+			opacity: 0.3;
 		}
 	}
 	img {
 		-moz-transition: all 0.2s;
 		-webkit-transition: all 0.2s;
-		transition: all 0.2s;
-		&:hover {
-			filter: grayscale( 100% );
-			opacity: 0.3;
-		}
+		transition: all 0.2s;	
 	}
 }
