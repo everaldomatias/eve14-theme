@@ -11,6 +11,7 @@ jQuery(document).ready(function() {
 	  // options
 	  itemSelector: '.grid-item'
 	});
+	jQuery('.slider').unslider();
 
 	var logo = jQuery( 'body.home .wrap-logo' );
 	if ( jQuery( logo ).length ) {

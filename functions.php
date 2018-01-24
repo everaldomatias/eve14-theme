@@ -42,6 +42,8 @@ if ( ! function_exists( 'e14_enqueue_scripts' ) ) {
 		wp_enqueue_script( 'main', $e14_theme_url . '/assets/js/main.min.js', array( 'jquery' ) );
 
 		if ( is_singular( 'graffiti' ) ) {
+			wp_enqueue_script( 'unslider', $e14_theme_url . '/assets/js/libs/unslider-min.js', array( 'jquery' ) );
+			wp_enqueue_style( 'unslider', $e14_theme_url . '/assets/js/libs/unslider.css', array(), null, 'all' );
 			wp_enqueue_script( 'masonry', $e14_theme_url . '/assets/js/libs/masonry.pkgd.min.js', array( 'jquery' ) );
 		}
 		

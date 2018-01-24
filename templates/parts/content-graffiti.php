@@ -1,7 +1,25 @@
 <?php if ( is_singular( 'graffiti' ) ): ?>
 	<article data-aos="fade" id="post-<?php the_ID(); ?>" <?php post_class( 'col-xs-12 graffiti' ); ?>>
-		<div class="slider">
-		</div><!-- /.slider -->
+		<?php $slider = get_post_meta( get_the_ID(), 'slider_image_plupload', true ) ?>
+		<?php if ( ! empty( $slider ) ) : ?>
+			<div class="slider">
+				<ul>
+					<?php
+						
+						foreach ( explode( ',', $slider ) as $image_id ) {
+						    $image_src = wp_get_attachment_image_src( $image_id, 'full' );
+
+						    echo '<li class="each">';
+						    echo '<a href="' . esc_url( $image_src[0] ) . '">';
+						    echo '<img src="' . esc_url( $image_src[0] ) . '"><br>';
+						    echo '</a>';
+						    echo '</li>';
+						}
+					?>
+				</ul>
+			</div><!-- /.slider -->
+		<?php endif; ?>
+
 		<div class="entry-content">
 			<?php the_content(); ?>
 		</div><!-- /.entry-content -->
