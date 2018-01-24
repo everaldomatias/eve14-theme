@@ -1,31 +1,43 @@
-article.graffiti {
-	position: relative;
-	.desc {
-		bottom: 25%;
-		color: #ffffff;
-		display: none;
-		font-size: 2em;
-		left: 5%;
-		position: absolute;
-		text-align: center;
-		width: 90%;
-		z-index: 9;
-		-moz-transition: all 0.2s;
-		-webkit-transition: all 0.2s;
-		transition: all 0.2s;
-	}
-	&:hover {
+.home {
+	article.graffiti {
+		position: relative;
 		.desc {
-			display: block;
+			bottom: 25%;
+			color: #ffffff;
+			display: none;
+			font-size: 2em;
+			left: 5%;
+			position: absolute;
+			text-align: center;
+			width: 90%;
+			z-index: 9;
+			-moz-transition: all 0.2s;
+			-webkit-transition: all 0.2s;
+			transition: all 0.2s;
+		}
+		&:hover {
+			.desc {
+				display: block;
+			}
+			img {
+				filter: grayscale( 100% );
+				opacity: 0.3;
+			}
 		}
 		img {
-			filter: grayscale( 100% );
-			opacity: 0.3;
+			-moz-transition: all 0.2s;
+			-webkit-transition: all 0.2s;
+			transition: all 0.2s;	
 		}
 	}
-	img {
-		-moz-transition: all 0.2s;
-		-webkit-transition: all 0.2s;
-		transition: all 0.2s;	
+}
+.single {
+	article.graffiti {
+		.grid-sizer,
+		.grid-item { width: 25%; }
+		.grid-item--width2 { width: 40%; }
+		float: none;
+		margin: 0 auto;
+		max-width: 980px;
 	}
 }

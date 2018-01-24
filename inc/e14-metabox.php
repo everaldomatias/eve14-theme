@@ -7,7 +7,7 @@ function e14_metabox() {
 
     $gallery_metabox = new Odin_Metabox(
         'gallery', // Slug/ID of the Metabox (Required)
-        'Galeria de Imagens', // Metabox name (Required)
+        'Imagens do Graffiti', // Metabox name (Required)
         'graffiti', // Slug of Post Type (Optional)
         'normal', // Context (options: normal, advanced, or side) (Optional)
         'high' // Priority (options: high, core, default or low) (Optional)
@@ -19,10 +19,18 @@ function e14_metabox() {
              * Default input examples.
              */
 
+            // Slider Plupload field.
+            array(
+                'id'          => 'slider_image_plupload', // Required
+                'label'       => __( 'Slider', 'odin' ), // Required
+                'type'        => 'image_plupload', // Required
+                // 'default'     => '', // Optional (image attachment ids separated with comma)
+                'description' => __( 'Adicione as imagens que deseja exibir no slider do Graffiti.', 'odin' ), // Optional
+            ),
             // Image Plupload field.
             array(
                 'id'          => 'gallery_image_plupload', // Required
-                'label'       => __( 'Imagens', 'odin' ), // Required
+                'label'       => __( 'Galeria', 'odin' ), // Required
                 'type'        => 'image_plupload', // Required
                 // 'default'     => '', // Optional (image attachment ids separated with comma)
                 'description' => __( 'Adicione as imagens que deseja exibir na galeria de fotos do Graffiti.', 'odin' ), // Optional

@@ -7,6 +7,11 @@ jQuery(document).ready(function() {
 		duration: 500
 	});
 
+	jQuery('.grid').masonry({
+	  // options
+	  itemSelector: '.grid-item'
+	});
+
 	var logo = jQuery( 'body.home .wrap-logo' );
 	if ( jQuery( logo ).length ) {
 		var height = window.innerHeight;

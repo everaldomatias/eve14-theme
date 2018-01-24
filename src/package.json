@@ -22,7 +22,8 @@
     "grunt-text-replace": "~0.4.0",
     "glob-watcher": "~3.0.0",
     "minimist": "~1.2.0",
-    "readable-stream": "~2.1.5"
+    "readable-stream": "~2.1.5",
+    "masonry-layout": "~4.2.0"
   },
   "engines": {
     "node": ">=0.10.1",
