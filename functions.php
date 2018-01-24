@@ -49,6 +49,7 @@ if ( ! function_exists( 'e14_enqueue_scripts' ) ) {
 if ( class_exists( 'Kirki' ) ) {
 	require 'inc/e14-kirki.php';
 }
+require 'inc/e14-metabox.php';
 require 'inc/e14-cpts.php';
 require 'inc/e14-functions.php';
 require 'inc/e14-hooks.php';
