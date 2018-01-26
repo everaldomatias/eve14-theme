@@ -1,5 +1,6 @@
 <?php if ( is_singular( 'graffiti' ) ): ?>
 	<article data-aos="fade" id="post-<?php the_ID(); ?>" <?php post_class( 'col-xs-12 graffiti' ); ?>>
+		<h1 class="entry-title"><?php the_title(); ?></h1>
 		<?php $slider = get_post_meta( get_the_ID(), 'slider_image_plupload', true ) ?>
 		<?php if ( ! empty( $slider ) ) : ?>
 			<div class="slider">

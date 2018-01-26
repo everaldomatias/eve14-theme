@@ -11,9 +11,11 @@ jQuery(document).ready(function() {
 	  // options
 	  itemSelector: '.grid-item'
 	});
-	jQuery('.slider').unslider();
+	jQuery('.slider').unslider({
+		nav: false
+	});
 
-	var logo = jQuery( 'body.home .wrap-logo' );
+	var logo = jQuery( '.wrap-logo' );
 	if ( jQuery( logo ).length ) {
 		var height = window.innerHeight;
 		var result = height * 0.5 - ( 160 * 0.5 );
@@ -22,4 +24,5 @@ jQuery(document).ready(function() {
 		jQuery( logo ).css( 'padding-bottom', result );
 		jQuery( 'body.home #content' ).css( 'margin-top', height );
 	}
+
 });

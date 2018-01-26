@@ -3,7 +3,12 @@
  * Aplica inline style no Header.
  */
 function e14_header_styles() {
-	$is_header_image = get_header_image();
+	if ( is_singular( 'graffiti' ) && has_post_thumbnail() ) {
+		$is_header_image = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+	} else {
+		$is_header_image = get_header_image();	
+	}
+	
 	$header_bg_image = '';
 	if ( $is_header_image ) {
 		$header_bg_image = 'url(' . esc_url( $is_header_image ) . ')';

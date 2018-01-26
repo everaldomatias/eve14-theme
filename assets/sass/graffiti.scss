@@ -32,6 +32,19 @@
 	}
 }
 .single {
+	header#masthead {
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+	}
+	.unslider-arrow {
+		background-color: red;
+		width: 40px;
+		height: 40px;
+		top: 300px;
+		position: absolute;
+		z-index: 99;
+	}
 	article.graffiti {
 		.grid-sizer,
 		.grid-item { width: 25%; }
