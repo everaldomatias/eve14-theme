@@ -43,7 +43,7 @@
 					    }
 
 					    echo '<a href="' . esc_url( $image_src_full[0] ) . '">';
-					    echo '<img class="' . $class . '" src="' . esc_url( $image_src[0] ) . '"><br>';
+					    echo '<img class="' . $class . '" src="' . esc_url( $image_src[0] ) . '">';
 					    echo '</a>';
 					}
 				?>

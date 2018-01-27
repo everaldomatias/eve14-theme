@@ -37,13 +37,33 @@
 		background-repeat: no-repeat;
 		background-size: 100% auto;
 	}
-	.unslider-arrow {
-		background-color: red;
-		width: 40px;
-		height: 40px;
-		top: 300px;
-		position: absolute;
-		z-index: 99;
+	.entry-title {
+		text-align: center;
+	}
+	.unslider {
+		.slider {
+			li.each {
+				text-align: center;
+			}
+		}
+		.unslider-arrow {
+			height: 60px;
+			text-indent: -9999px;
+			top: 300px;
+			position: absolute;
+			width: 40px;
+			z-index: 99;
+			&.prev {
+				background: url('../images/prev.png') center center no-repeat transparent;
+				background-size: 100%;
+				left: -15px;
+			}
+			&.next {
+				background: url('../images/next.png') center center no-repeat transparent;
+				background-size: 100%;
+				right: -15px;
+			}
+		}
 	}
 	article.graffiti {
 		.grid-sizer,
@@ -51,6 +71,6 @@
 		.grid-item--width2 { width: 40%; }
 		float: none;
 		margin: 0 auto;
-		max-width: 980px;
+		max-width: 1280px;
 	}
 }
