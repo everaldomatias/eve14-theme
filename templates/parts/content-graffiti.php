@@ -48,6 +48,7 @@
 					}
 				?>
 			</div><!-- /.gallery -->
+			<div class="clearfix"></div><!-- /.clearfix -->
 		<?php endif; ?>
 
 	</article><!-- #post-## -->

@@ -35,7 +35,7 @@
 	header#masthead {
 		background-position: center;
 		background-repeat: no-repeat;
-		background-size: 100% auto;
+		//background-size: 100% auto;
 	}
 	.entry-title {
 		text-align: center;
@@ -50,6 +50,9 @@
 			height: 60px;
 			text-indent: -9999px;
 			top: 300px;
+			-moz-transition: all 0.2s;
+			-webkit-transition: all 0.2s;
+			transition: all 0.2s;
 			position: absolute;
 			width: 40px;
 			z-index: 99;
@@ -57,18 +60,51 @@
 				background: url('../images/prev.png') center center no-repeat transparent;
 				background-size: 100%;
 				left: -15px;
+				@media ( max-width: 1280px ) {
+					left: 15px;
+				}
 			}
 			&.next {
 				background: url('../images/next.png') center center no-repeat transparent;
 				background-size: 100%;
 				right: -15px;
+				@media ( max-width: 1328px ) {
+					right: 15px;
+				}
+			}
+		}
+	}
+	#content {
+		background: $branco;
+		article.graffiti {
+			.gallery {
+				margin: 30px -2.5px;
+				img {
+					border: solid 2.5px $branco;
+					-moz-transition: all 0.2s;
+					-webkit-transition: all 0.2s;
+					transition: all 0.2s;
+					&:hover {
+						filter: grayscale( 100% );
+					}
+				}
 			}
 		}
 	}
 	article.graffiti {
 		.grid-sizer,
-		.grid-item { width: 25%; }
-		.grid-item--width2 { width: 40%; }
+		.grid-item {
+			width: 25%;
+			@media ( max-width: 768px ) {
+				width: 50%;
+			}
+		}
+		.grid-item--width2 {
+			width: 40%;
+			@media ( max-width: 768px ) {
+				width: 80%;
+			}
+		}
 		float: none;
 		margin: 0 auto;
 		max-width: 1280px;

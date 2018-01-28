@@ -48,6 +48,14 @@ img {
 }
 
 /* Header */
+header#masthead {
+	background-position: center;
+	background-repeat: no-repeat;
+	//background-size: 100%;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+}
 .wrap-logo {
 	padding: 15px;
 	text-align: center;
@@ -59,6 +67,19 @@ img {
 body.home {
 	.wrap-logo {
 		//padding: 290px 15px;
+	}
+}
+
+// # Content
+#content {
+	background: $cinza-escuro;
+	position: relative;
+	z-index: 99;
+	.entry-content {
+		@media ( max-width: 1258px ) {
+			padding-left: 15px !important;
+			padding-right: 15px !important;
+		}
 	}
 }
 

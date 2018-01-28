@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
 		
 		jQuery( logo ).css( 'padding-top', result );
 		jQuery( logo ).css( 'padding-bottom', result );
-		jQuery( 'body.home #content' ).css( 'margin-top', height );
+		jQuery( '#content' ).css( 'margin-top', height );
 	}
 
 });
