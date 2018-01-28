@@ -48,7 +48,7 @@
 		.unslider-arrow {
 			height: 60px;
 			text-indent: -9999px;
-			top: 300px;
+			top: 330px;
 			-moz-transition: all 0.2s;
 			-webkit-transition: all 0.2s;
 			transition: all 0.2s;
@@ -77,10 +77,9 @@
 		background: url( '../images/bg.jpg' ) center center fixed no-repeat;
 		article.graffiti {
 			.gallery {
-				margin: 30px -2.5px;
+				margin: 30px auto;
 				overflow: hidden;
 				img {
-					border: solid 2.5px $branco;
 					-moz-transition: all 0.2s;
 					-webkit-transition: all 0.2s;
 					transition: all 0.2s;

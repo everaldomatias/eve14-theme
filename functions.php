@@ -4,7 +4,7 @@
  * Content width.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 768;
+	$content_width = 1280;
 }
 
 if ( ! function_exists( 'e14_setup_theme' ) ) {
@@ -27,6 +27,8 @@ if ( ! function_exists( 'e14_setup_theme' ) ) {
 				'caption'
 			)
 		);
+
+		add_image_size( 'slider-graffiti', 1280, 600, $crop = array( 'center', 'center' ) );
 	}
 
 	add_action( 'after_setup_theme', 'e14_setup_theme' );

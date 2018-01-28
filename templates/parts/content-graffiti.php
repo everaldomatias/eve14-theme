@@ -6,15 +6,15 @@
 			<div class="slider">
 				<ul>
 					<?php
-						
 						foreach ( explode( ',', $slider ) as $image_id ) {
-						    $image_src = wp_get_attachment_image_src( $image_id, 'full' );
-
-						    echo '<li class="each">';
-						    echo '<a href="' . esc_url( $image_src[0] ) . '">';
-						    echo '<img src="' . esc_url( $image_src[0] ) . '"><br>';
-						    echo '</a>';
-						    echo '</li>';
+						    $image_src = wp_get_attachment_image_src( $image_id, 'slider-graffiti' );
+						    if ( ! empty( $image_src[0] ) ) {
+								echo '<li class="each">';
+							    echo '<a href="' . esc_url( $image_src[0] ) . '">';
+							    echo '<img src="' . esc_url( $image_src[0] ) . '"><br>';
+							    echo '</a>';
+							    echo '</li>';
+						    }
 						}
 					?>
 				</ul>
