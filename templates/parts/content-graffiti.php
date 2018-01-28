@@ -27,24 +27,17 @@
 
 		<?php $gallery = get_post_meta( get_the_ID(), 'gallery_image_plupload', true ) ?>
 		<?php if ( ! empty( $gallery ) ) : ?>
-			<div class="gallery grid">
+			<div class="gallery">
 				<?php
 					$count = 0;
 					foreach ( explode( ',', $gallery ) as $image_id ) {
 					    $image_src = wp_get_attachment_image_src( $image_id );
 					    $image_src_full = wp_get_attachment_image_src( $image_id, 'full' );
-					    $count++;
-
-					    if ( $count == 5 ) {
-					    	$class = "grid-item--width2";
-					    	$count = 0;
-					    } else {
-					    	$class = "grid-item";
+					    if ( ! empty( $image_src[0] ) && ! empty( $image_src_full[0] ) ) {
+					    	echo '<a href="' . esc_url( $image_src_full[0] ) . '">';
+						    echo '<img class="col-xs-6 col-sm-3 col-md-2 each-graffiti nopadding" src="' . esc_url( $image_src[0] ) . '">';
+						    echo '</a>';
 					    }
-
-					    echo '<a href="' . esc_url( $image_src_full[0] ) . '">';
-					    echo '<img class="' . $class . '" src="' . esc_url( $image_src[0] ) . '">';
-					    echo '</a>';
 					}
 				?>
 			</div><!-- /.gallery -->

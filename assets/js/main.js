@@ -7,10 +7,6 @@ jQuery(document).ready(function() {
 		duration: 500
 	});
 
-	jQuery('.grid').masonry({
-	  // options
-	  itemSelector: '.grid-item'
-	});
 	jQuery('.slider').unslider({
 		nav: false
 	});

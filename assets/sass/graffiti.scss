@@ -35,7 +35,6 @@
 	header#masthead {
 		background-position: center;
 		background-repeat: no-repeat;
-		//background-size: 100% auto;
 	}
 	.entry-title {
 		text-align: center;
@@ -75,10 +74,11 @@
 		}
 	}
 	#content {
-		background: $branco;
+		background: url( '../images/bg.jpg' ) center center fixed no-repeat;
 		article.graffiti {
 			.gallery {
 				margin: 30px -2.5px;
+				overflow: hidden;
 				img {
 					border: solid 2.5px $branco;
 					-moz-transition: all 0.2s;
