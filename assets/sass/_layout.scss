@@ -55,7 +55,10 @@ header#masthead {
 	width: 100%;
 	z-index: 1;
 	@media ( min-width: 1040px ) {
-		background-size: 110%;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
 	}
 }
 .wrap-logo {
@@ -74,7 +77,7 @@ body.home {
 
 // # Content
 #content {
-	background: $cinza-escuro;
+	background: $branco;
 	position: relative;
 	z-index: 99;
 	.entry-content {

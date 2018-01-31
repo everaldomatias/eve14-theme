@@ -1,33 +1,40 @@
 .home {
-	article.graffiti {
-		position: relative;
-		.desc {
-			bottom: 25%;
-			color: #ffffff;
-			display: none;
-			font-size: 2em;
-			left: 5%;
-			position: absolute;
-			text-align: center;
-			width: 90%;
-			z-index: 9;
-			-moz-transition: all 0.2s;
-			-webkit-transition: all 0.2s;
-			transition: all 0.2s;
-		}
-		&:hover {
+	#primary {
+		margin: 0 auto;
+		max-width: 1280px;
+		padding: 100px 50px;
+		article.graffiti {
+			background-color: $cinza-escuro;
+			border: 15px solid $branco;
+			position: relative;
 			.desc {
-				display: block;
+				bottom: 25%;
+				color: #ffffff;
+				display: none;
+				font-size: 2em;
+				left: 5%;
+				position: absolute;
+				text-align: center;
+				width: 90%;
+				z-index: 9;
+				-moz-transition: all 0.2s;
+				-webkit-transition: all 0.2s;
+				transition: all 0.2s;
+			}
+			&:hover {
+				.desc {
+					display: block;
+				}
+				img {
+					filter: grayscale( 100% );
+					opacity: 0.9;
+				}
 			}
 			img {
-				filter: grayscale( 100% );
-				opacity: 0.3;
+				-moz-transition: all 0.2s;
+				-webkit-transition: all 0.2s;
+				transition: all 0.2s;	
 			}
-		}
-		img {
-			-moz-transition: all 0.2s;
-			-webkit-transition: all 0.2s;
-			transition: all 0.2s;	
 		}
 	}
 }
@@ -37,6 +44,7 @@
 		background-repeat: no-repeat;
 	}
 	.entry-title {
+		margin-top: 30px;
 		text-align: center;
 	}
 	.unslider {
@@ -74,18 +82,12 @@
 		}
 	}
 	#content {
-		background: url( '../images/bg.jpg' ) center center fixed no-repeat;
+		background: $branco;
+		padding: 0 50px 100px 50px;
 		article.graffiti {
-			.gallery {
-				margin: 30px auto;
-				overflow: hidden;
+			.entry-content {
 				img {
-					-moz-transition: all 0.2s;
-					-webkit-transition: all 0.2s;
-					transition: all 0.2s;
-					&:hover {
-						filter: grayscale( 100% );
-					}
+					margin: 15px auto;
 				}
 			}
 		}
