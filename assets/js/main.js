@@ -19,6 +19,13 @@ jQuery(document).ready(function() {
 		jQuery( logo ).css( 'padding-top', result );
 		jQuery( logo ).css( 'padding-bottom', result );
 		jQuery( '#content' ).css( 'margin-top', height );
+		jQuery( '#footer' ).css( 'margin-bottom', result );
 	}
+	jQuery(window).scroll(function() {
+		var s = jQuery(window).scrollTop(),
+		opacityVal = (s / 400);
+
+		jQuery('.blurred-image').css('opacity', opacityVal);
+	});
 
 });

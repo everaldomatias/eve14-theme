@@ -17,6 +17,7 @@
 	<?php do_action( 'e14_before_header' ); ?>
 
 	<header id="masthead" class="site-header" role="banner" style="<?php e14_header_styles(); ?>">
+	<div class="site-header blurred-image" style="<?php e14_header_styles(); ?>"></div>
 		<div class="col-full">
 
 			<?php do_action( 'e14_header' ); ?>
