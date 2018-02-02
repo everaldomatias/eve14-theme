@@ -106,31 +106,42 @@ body.home {
 // # Footer
 
 #footer {
-	background-color: $cinza-escuro;
-	color: $branco;
-	position: relative;
-	z-index: 9;
-	-webkit-box-shadow: 0 10px 50px 0 rgba(0,0,0,0.75);
-	box-shadow: 0 10px 50px 0 rgba(0,0,0,0.75);
 	.container {
 		color: $cinza-claro;
 		max-width: 800px;
 		padding-bottom: 30px;
 		padding-top: 30px;
+		.infos {
+			padding-top: 75px;
+		}
 		.infos span {
 			display: block;
 			font-size: 16px;
-			padding-bottom: 5px;
+			margin-bottom: 15px;
 			width: 100%;
-			&.glyphicon {
-				display: inline;
-				margin-right: 10px;
+			&.telefone {
+				background: url( '../images/phone.png' ) left center no-repeat;
+				background-size: 30px;
+				padding: 5px 15px 5px 45px;
+			}
+			&.email {
+				background: url( '../images/mail.png' ) left center no-repeat;
+				background-size: 30px;
+				padding: 5px 15px 5px 45px;
+			}
+			&.instagram {
+				background: url( '../images/instagram.png' ) left center no-repeat;
+				background-size: 30px;
+				padding: 5px 15px 5px 45px;
 			}
 		}
 		a {
 			color: $cinza-claro;
 		}
 		.wpcf7 {
+			textarea {
+				height: 100px;
+			}
 			input[ type="text" ],
 			input[ type="email" ],
 			textarea {
