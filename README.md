@@ -1,9 +1,13 @@
-# Eve14 WP Theme #
+# Eve14 WP Theme (v2) #
 
-## Use ##
-O tema prevê um [template de página](https://developer.wordpress.org/themes/template-files-section/page-template-files/) chamado Grid all Graffitis para ser usado como página inicial, ela exibirá um grid responsivo listando todos os posts (máximo 100 posts) do [CPT](https://codex.wordpress.org/pt-br:Tipos_de_Posts_Customizados) Graffiti.
+### Desctrição ###
+Esse tema tem como objetivo inicial ser o mais simples possível e para isso utilizar o máximo de recursos disponíveis no Core do WordPress e dos plugins disponíveis no repositório oficial, e também ser uma base de estudos para a utilização das boas práticas propostas pelo WordPress.
 
+## Autor ##
 
-## Referência ##
-[Functions da Galáxia](https://github.com/brasadesign/functions)
-[Odin](https://wpod.in)
+- [Everaldo Matias](https://everaldomatias.github.io/)
+
+## Referências ##
+
+- [Functions da Galáxia](https://github.com/brasadesign/functions)
+- [Odin](https://wpod.in)

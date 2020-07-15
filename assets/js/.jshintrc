@@ -12,13 +12,15 @@
 	"trailing": true,
 	"undef": true,
 	"unused": true,
-
+	"devel": true,
 	"browser": true,
 
 	"globals": {
 		"_": false,
 		"Backbone": false,
 		"jQuery": false,
-		"wp": false
+		"AOS": true,
+		"wp": false,
+		"devel": true
 	}
 }

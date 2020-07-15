@@ -1,0 +1,125 @@
+.home {
+	#primary {
+		margin: 0 auto;
+		max-width: 1280px;
+		padding: 100px 100px;
+		@media ( max-width: 768px ) {
+			padding: 50px 50px;
+		}
+		@media ( max-width: 500px ) {
+			padding: 15px 15px;
+		}
+		article.graffiti {
+			background-color: $cinza-escuro;
+			border: 15px solid $branco;
+			position: relative;
+			.desc {
+				bottom: 25%;
+				color: #ffffff;
+				display: none;
+				font-size: 2em;
+				left: 5%;
+				position: absolute;
+				text-align: center;
+				width: 90%;
+				z-index: 9;
+				-moz-transition: all 0.2s;
+				-webkit-transition: all 0.2s;
+				transition: all 0.2s;
+			}
+			&:hover {
+				.desc {
+					display: block;
+				}
+				img {
+					filter: grayscale( 100% );
+					opacity: 0.9;
+				}
+			}
+			img {
+				-moz-transition: all 0.2s;
+				-webkit-transition: all 0.2s;
+				transition: all 0.2s;	
+			}
+		}
+	}
+}
+.single {
+	header#masthead {
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	.entry-title {
+		margin-top: 30px;
+		text-align: center;
+	}
+	.unslider {
+		.slider {
+			li.each {
+				text-align: center;
+			}
+		}
+		.unslider-arrow {
+			height: 60px;
+			text-indent: -9999px;
+			top: 330px;
+			-moz-transition: all 0.2s;
+			-webkit-transition: all 0.2s;
+			transition: all 0.2s;
+			position: absolute;
+			width: 40px;
+			z-index: 99;
+			&.prev {
+				background: url('../images/prev.png') center center no-repeat transparent;
+				background-size: 100%;
+				left: -15px;
+				@media ( max-width: 1280px ) {
+					left: 15px;
+				}
+			}
+			&.next {
+				background: url('../images/next.png') center center no-repeat transparent;
+				background-size: 100%;
+				right: -15px;
+				@media ( max-width: 1328px ) {
+					right: 15px;
+				}
+			}
+		}
+	}
+	#content {
+		background: $branco;
+		padding: 0 100px 100px 100px;
+		@media ( max-width: 768px ) {
+			padding: 0 50px 50px 50px;
+		}
+		@media ( max-width: 500px ) {
+			padding: 0 15px 15px 15px;
+		}
+		article.graffiti {
+			.entry-content {
+				img {
+					margin: 15px auto;
+				}
+			}
+		}
+	}
+	article.graffiti {
+		.grid-sizer,
+		.grid-item {
+			width: 25%;
+			@media ( max-width: 768px ) {
+				width: 50%;
+			}
+		}
+		.grid-item--width2 {
+			width: 40%;
+			@media ( max-width: 768px ) {
+				width: 80%;
+			}
+		}
+		float: none;
+		margin: 0 auto;
+		max-width: 1280px;
+	}
+}

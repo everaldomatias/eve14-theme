@@ -1,0 +1,22 @@
+// ==========================================================================
+// Theme Style Main
+// ==========================================================================
+
+/*!
+Theme Name: Eve14
+Author URI: http://eve14.com.br/
+Description: Main stylesheet.
+Author: Everaldo Matias
+Author URI: https://everaldomatias.github.io/
+*/
+
+@import
+        "core",					// AOS Core
+        "easing",				// AOS Easing
+        "animations",			// AOS Animations
+        "variables",			// Theme		Custom Variables
+        "layout",				// Theme 		Custom Layout
+        "graffiti",				// Graffiti 	All
+        "home",					// Home       	Layout
+        "footer"				// Footer
+;

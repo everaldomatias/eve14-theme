@@ -1,76 +1,31 @@
-jQuery(document).ready(function($) {
-
-	// Responsive wp_video_shortcode().
-	$( '.wp-video-shortcode' ).parent( 'div' ).css( 'width', 'auto' );
-
-	/**
-	 * Odin Core shortcodes
-	 */
-
-	// Tabs.
-	$( '.odin-tabs a' ).click(function(e) {
-		e.preventDefault();
-		$(this).tab( 'show' );
+jQuery(document).ready(function() {
+	AOS.init({
+		disable: 'mobile',
+		startEvent: 'load',
+		easing: 'ease',
+		delay: 100,
+		duration: 500
 	});
 
-	// Fancybox Home
-    $('body.home').on('click', 'a.fancybox', function(e) {
-	    // previne a ação padrao: no caso de um link, previne que ele abra o link pelo navegador
-	    e.preventDefault();
-
-	    // adiciona o icone loading...
-	   	$('<div id="fancybox-loading"><div></div></div>').appendTo('html');
-
-	    // cria os dados para o AJAX
-	    var data = {
-			 action: 'graffiti_gallery',
-			 post_id: $( this ).attr( 'data-id' )
-		};
-	    // xecuta o ajax
-		$.get( ajax_object.ajax_url, data, function(response) {
-	        $images = JSON.parse(response);
-	        $.fancybox( $images, {type: 'image'});
-		});
+	jQuery('.slider').unslider({
+		nav: false
 	});
 
-	/* This is basic - uses default settings */
-	$(".page-template-page-dletra a.fancybox").fancybox();
-	
-	// Window load event used just in case window height is dependant upon images
-	$(window).bind("load", function() { 
-       
-       var $contato = $( "body.grid .contato" )
-           positionContato()
+	var logo = jQuery( '.wrap-logo' );
+	if ( jQuery( logo ).length ) {
+		var height = window.innerHeight;
+		var result = height * 0.5 - ( 160 * 0.5 );
+		
+		jQuery( logo ).css( 'padding-top', result );
+		jQuery( logo ).css( 'padding-bottom', result );
+		jQuery( '#content' ).css( 'margin-top', height );
+		jQuery( '#footer' ).css( 'margin-bottom', result );
+	}
+	jQuery(window).scroll(function() {
+		var s = jQuery(window).scrollTop(),
+		opacityVal = (s / 400);
 
-        function positionContato() {
-        	screenSize = $(window).height();
-        	body = $( document.body );
-        	wrapper = $( "#wrapper" );
-        	bodySize = wrapper.height();
-        	contatoSize = $contato.height();
-           	scrollSize = bodySize - contatoSize*2;
-
-           	wrapper.css({
-           		'padding-bottom': contatoSize
-           	})
-
-        	if ( $(window).scrollTop() > scrollSize ) {
-        		$contato.css({
-        			opacity: 1,
-        			'z-index': 1
-        		})
-        	} else {
-        		$contato.css({
-        			opacity: 0,
-        			'z-index': -1
-        		})
-        	};
-        }
-           
-       $( window )
-        	.scroll( positionContato )
-            .resize( positionContato )
-              
+		jQuery('.blurred-image').css('opacity', opacityVal);
 	});
 
 });
