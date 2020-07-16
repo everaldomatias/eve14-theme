@@ -15,7 +15,7 @@ jQuery(document).ready(function() {
 	if ( jQuery( logo ).length ) {
 		var height = window.innerHeight;
 		var result = height * 0.5 - ( 160 * 0.5 );
-		
+
 		jQuery( logo ).css( 'padding-top', result );
 		jQuery( logo ).css( 'padding-bottom', result );
 		jQuery( '#content' ).css( 'margin-top', height );
